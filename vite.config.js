@@ -11,7 +11,10 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   base: '/green/',
 
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
 
   resolve: {
     alias: {
@@ -30,13 +33,15 @@ export default defineConfig({
     sourcemap: false,
 
     rollupOptions: {
+      // 🚨 코드 분할 완전 비활성화
       output: {
-        manualChunks: {},   // ← 🔥 chunk splitting 완전 OFF
+        inlineDynamicImports: true,  // ← dynamic import도 한 파일로 합침
+        manualChunks: undefined,     // ← chunk 분할 금지
       },
     },
 
-    // 경고 완화
-    chunkSizeWarningLimit: 5000,
+    // 하나의 번들 파일로 묶어도 경고 안 나오게
+    chunkSizeWarningLimit: 999999,
   },
 
   css: {
@@ -50,5 +55,5 @@ export default defineConfig({
 
   optimizeDeps: {
     include: ['ag-grid-react', 'ag-grid-community'],
-  }
+  },
 });
