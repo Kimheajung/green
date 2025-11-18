@@ -1,0 +1,414 @@
+.layout-topbar_wrap{
+    position: fixed;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: left $transitionDuration;
+    display: flex;
+    align-items: center;
+}
+
+.layout-topbar {
+    position: fixed;
+    height: 4rem;
+    z-index: 997;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 1rem;
+    background-color: var(--hugreen);
+    transition: left $transitionDuration;
+    display: flex;
+    align-items: center;
+    //box-shadow: 0px 3px 5px rgba(0,0,0,.02), 0px 0px 2px rgba(0,0,0,.05), 0px 1px 4px rgba(0,0,0,.08);
+
+    .layout-topbar-logo {
+        display: flex;
+        align-items: center;
+        color: var(--surface-100);
+        font-size: 1.25rem;
+        //font-weight: 500;
+        //width: 300px;
+        //border-radius: 12px;
+
+        img {
+            height: 12px;
+            margin-left: .5rem;
+            margin-right: .5rem;
+            margin-top : -8px;
+        }
+
+        &:focus {
+            @include focused();
+        }
+    }
+
+    .layout-topbar-button {
+        display: inline-flex;
+        justify-content: center !important;
+        align-items: center;
+        position: relative;
+        color: var(--surface-100);
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        transition: background-color $transitionDuration;
+
+        &:hover {
+            color: var(--text-color);
+            background-color: var(--surface-hover);
+        }
+
+        &:focus {
+            @include focused();
+        }
+
+        i {
+            font-size: 1rem;
+        }
+
+        span {
+            font-size: 1rem;
+            display: none;
+        }
+
+    }
+
+    .layout-menu-button {
+        margin-right: .5rem;
+    }
+
+    .layout-topbar-menu-button {
+        display: none;
+
+        i {
+            font-size: 1.25rem;
+        }
+    }
+
+    .layout-topbar-menu {
+        margin: 0 0 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        .layout-topbar-button {
+            margin-left: .5rem;
+        }
+    }
+
+    .top_menu_link{
+        align-items: center;
+        margin:0 .5rem;
+        color: var(--surface-100);
+        display: flex;
+        align-items: center;
+        font-size: 1.1429rem;
+        cursor: pointer;
+        white-space: nowrap;
+        //font-weight: 500;
+        //width: 300px;
+        //border-radius: 12px;
+        /* 마우스 오버 시 밑줄 */
+        &:hover {
+            text-decoration: underline;
+        }
+        &.active {
+            color: #E9B67B;            
+            &::after {
+            width: 100%;             
+            }
+        }
+    }
+}
+
+
+.mdi-size {
+    width: calc(1800px - 105px);
+}
+
+.layout-mdi {
+    position: fixed;
+    height: 3.286rem;
+    //z-index: 997;
+    left: 0;
+    top: 4rem;
+    width: 100%;
+    padding: 0 1rem;
+    background-color: var(--surface-a);
+    transition: left $transitionDuration;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:1px solid #E8EAF5;
+
+    
+.layout-topbarmdi-button.right {
+  transition: color 0.2s ease;
+  color: inherit; 
+}
+
+/* 기본 hover 효과 */
+.layout-topbarmdi-button.right:hover {
+  color: #555;
+}
+
+/* 20개 이상일 때 */
+.layout-topbarmdi-button.right.active-limit {
+  color: #333;
+}
+
+/* 20개 이상 + hover 시 */
+.layout-topbarmdi-button.right.active-limit:hover {
+  color: #555;
+}
+
+    .layout-topbarmdi-button {
+        margin-left: 0;
+        display: flex;
+        color:#A8A8A8;
+        border-radius: 12px;
+        padding: 1rem;
+        width: 2rem;
+        height: 2rem;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
+        i {
+            font-size: 1rem;
+            margin-right: 0rem;
+        }
+
+        span {
+            font-weight: medium;
+            display: none;
+        }
+
+        &:hover {
+           color: #333;   
+        }
+    }
+
+        .mdi-container {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        scrollbar-width: none; // firefox
+        -ms-overflow-style: none; // ie 10+
+        &::-webkit-scrollbar {
+        display: none;
+        }
+
+        /* 개별 페이지 탭 */
+        .mdi-page {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0rem;
+            cursor: pointer; 
+            white-space: nowrap;
+            transition: all 0.2s ease;       
+
+            span{       
+                margin-right:3rem;
+                font-size: .875rem;
+            }
+        }
+
+        /* 활성 탭 (선택된 상태) */
+        .mdi-page.active {
+            color: #364FC7;  
+            font-weight: 600; 
+        }
+
+        /* 비활성 탭 */
+        .mdi-page.inactive {
+            background-color: #f9f9f9; /* gray-300 */
+            color: #9E9E9E; /* gray-700 */
+        }
+
+        /* 비활성 탭 hover 시 글자색 green으로 */
+        .mdi-page.inactive:hover {
+            color: #364FC7; /* green-500 */
+        }
+
+        .mdi-close {
+            background: transparent;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .mdi-close i {
+            font-size: 0.875rem; /* 14px 정도 */
+            transition: color 0.2s;
+        }
+
+        .mdi-close:hover i {
+            color: #f87171; 
+        }
+
+    }
+ }
+
+/* 메가메뉴*/
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+.menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+/* 메가메뉴 재정의*/
+.megamenu-container {
+  position: absolute;
+  left: 0;
+  top: 56px; // 기존 inline style → 여기로 이동
+  width: 100%;
+  z-index: 50; // Tailwind z-50 동일
+  background-color: #00485d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  overflow: auto; // 내부 스크롤 가능
+}
+
+.megamenu-wrapper {
+  display: flex;
+  flex-wrap: wrap; // ✅ 줄바꿈 허용
+  justify-content: center; // ✅ 가로 중앙 정렬
+  align-items: flex-start; // 세로 기준 맞춤
+  gap: 3rem; // 컬럼 간격
+  padding: 1.5rem;
+  margin: 0 auto; // ✅ 컨테이너 자체 중앙
+  max-width: 1240px;
+  max-height: 400px;
+  color: #fff;
+
+  .megamenu-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+    padding: 0.5rem 1rem;
+
+    .megamenu-title {
+      font-weight: 600;
+      font-size: 1.6rem; // text-lg
+      color: #fff;
+      margin-bottom: .5rem;
+    }
+
+    .megamenu-items {
+      display: flex;
+      flex-direction: column;
+      
+
+      .megamenu-link {
+        display: flex;
+        align-items: center;
+        font-weight: 200;
+        gap: 0.5rem;
+        padding: 0.35rem 0;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            color: #E9B67B;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 991px) {
+    .layout-topbar {
+        justify-content: space-between;
+
+        .layout-topbar-logo {
+            width: auto;
+            order: 2;
+            /* 말줄임표 처리 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .layout-menu-button {
+            margin-left: 0;
+            order: 1;
+        }
+
+        .layout-topbar-menu-button {
+            display: inline-flex;
+            margin-left: 0;
+            order: 3;
+        }
+
+        .layout-topbar-menu {
+            margin-left: 0;
+            position: absolute;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px rgba(0,0,0,.12);
+            border: 1px solid #D5D5D5 !important;
+            border-radius: 6px;
+            padding: .5rem;
+            right: 1rem;
+            top: 4.5rem;
+            //min-width: 15rem;
+            display: none;
+            -webkit-animation: scalein 0.15s linear;
+            animation: scalein 0.15s linear;
+
+            &.layout-topbar-menu-mobile-active {
+                display: block
+            }
+
+            .layout-topbar-button {
+                margin-left: .5rem;
+                display: flex;
+                width: 100%;
+                color: #888 !important;
+                height: auto;
+                justify-content: flex-start !important;
+                border-radius: 12px;
+                padding: .5rem;
+
+                i {
+                    font-size: 1rem;
+                    margin-right: .5rem;
+                }
+
+                span {
+                    font-weight: medium;
+                    display: block;
+                }
+            }
+        }
+    }
+    .layout-mdi {
+        display: none;
+    }
+     .p-megamenu {
+        display: none;
+    }
+    .megamenu-container{
+        display: none;
+    }
+}

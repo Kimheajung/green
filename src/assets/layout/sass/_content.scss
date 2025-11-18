@@ -1,0 +1,209 @@
+.layout-main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 6rem 2rem 2rem 2rem;
+    transition: margin-left $transitionDuration;
+}
+
+.layout-main {
+    flex: 1 1 auto;
+}
+
+.layout-BreadCrumb-button {
+    margin-left: 0;
+    display: flex;
+    color:#aeaeae;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    overflow: hidden;
+    line-height: 0; 
+    display: inline-block; /* 이건 괜찮아요 */
+    i {
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+
+    span {
+        font-weight: medium;
+        display: none;
+    }
+
+    &:hover {
+        color: #333;   
+    }
+}
+
+/* 공통 : 즐겨찾기 아이콘 */
+.layout-Favorite-button {
+  background: transparent !important;
+  border: none !important;
+  color: #aeaeae !important; 
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left:0rem; 
+
+  &:hover {
+    color: #364FC7 !important; 
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none;
+  }
+
+  .pi {
+    font-size: 1.25rem; 
+  }
+}
+
+/* 검색영역에 대한 정의*/
+.hugreen_searchwrap {
+  display: flex;
+  width: 100%;
+  border: 1px solid #E2E8F0;
+  border-radius: 4px;
+  background-color: #F8FAFC;
+  // height: 64px; // 필요시 주석 해제
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  color: #555;
+
+  .flex {
+    display: flex;
+    gap: 1rem; // flex 간격 조정 (필요시)    
+    justify-content: start;
+    align-items: left;
+    flex-wrap: wrap;
+
+    .h_formgroup-inline {
+      //display: flex;
+      gap: 1rem; // 필드 간격
+      flex-wrap: wrap;  
+
+      .h_field {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;        
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+
+        label.p-sr-only {
+        color:#9FAABA;
+        padding:0 1rem 0 0;
+        text-align: left;
+        width:120px;
+        }
+        button.in-searchbtn {
+            background-color: #7E84A3;
+            color:#ffffff !important;
+        }
+
+        .spantext {
+        color:#9FAABA;
+        padding:0 1rem 0 0;
+        text-align: left;
+        }
+        
+      }
+    }
+  }
+
+
+  
+  .flex:last-child {
+    button {
+      background-color: #00485D;
+      color:#fff;
+    }
+     button.in {
+      background-color: #bababa !important;
+      border:1px solid #bababa !important;
+      color:#fff !important;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.hugreen_aggridbtn_hwrap{
+    display: flex;
+    width: 100%;
+    height: 28px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .totalNumText{
+        font-weight: 600;
+        span {color: $color-primary;}
+    }
+}
+
+.hugreen_aggrid_hwrap{
+    //display: flex;
+    background-color: #eee;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.hugreen_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    //padding: 0 1rem;
+}
+
+.hugreen_space{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 4rem;
+    //padding: 0 1rem;
+}
+
+@media (max-width: 991px) {
+   .layout-main-container {
+    padding: 5.286rem 1rem 1rem 1rem;
+    }
+
+    .hugreen_searchwrap .flex .h_formgroup-inline .h_field {
+        justify-content: left;
+    }
+
+    
+} 
+
+
+@media (max-width: 450px) {    
+    .search-btn-wrap {width: 100% !important;margin-top:1rem;}
+    .search-btn {
+        width: 100% !important;
+        background-color: #00485D !important;
+        color: #fff !important;
+    }
+} 
+
+
+
+
+
+
+
