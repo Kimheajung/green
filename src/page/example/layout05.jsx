@@ -154,15 +154,12 @@ const Layout05 = () => {
         
       </div>
     </div>
-
-            
-
    
   );
 
 
   return (
-    <div className="card" style={{background: "yellow"}}>  
+    <div className="card height-02" >  
         {/* 공통 : 타이틀영역 */}
         <div className="title-container">
             <div  className="flex gap-2">
@@ -197,7 +194,7 @@ const Layout05 = () => {
 
 
         {/* 공통 case01 : 검색영역 + 그리드 버튼 + 그리드영역 */}
-        <div className="hugreen_grid flex flex-1 flex-wrap md:flex-row">
+        <div className="hugreen_grid flex flex-1  flex-wrap md:flex-row">
            
             {/* 공통 검색영역(PC+모바일대응) */}
             <div className="hugreen_grid flex-1 flex flex-wrap">

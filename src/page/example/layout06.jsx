@@ -139,7 +139,7 @@ const Layout06 = () => {
 
 
   return (
-    <div className="card" style={{background: "yellow"}}>  
+    <div className="card height-01">  
         {/* 공통 : 타이틀영역 */}
         <div className="title-container">
             <div  className="flex gap-2">

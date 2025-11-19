@@ -135,7 +135,7 @@ const Example03 = () => {
                 <div className="row">
                   <div className="th">등록일</div>
                   <div className="td">
-                    <div className="span text-right">2029.000,9999</div>
+                    <div className="span">2029.000,9999</div>
                   </div>
                   <div className="th">등록자</div>
                   <div className="td">

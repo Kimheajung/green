@@ -268,9 +268,19 @@ ol, ul {padding-left: 0rem !important;}
 
 /* 공통 재정의 : 수정불가*/
 .card {
-  height: calc(100vh - 17.6rem) !important;
-  background-color: yellowgreen;
+  //height: calc(100vh - 17.6rem) !important;
+  background-color: transparent !important;
 }
+
+.height-01{
+  height: calc(100vh - 17.6rem) !important;
+}
+
+.height-02{
+  height: calc(100vh - 20rem) !important;
+}
+
+
 
 @media (max-width: 991px) {
     .card {

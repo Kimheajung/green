@@ -204,9 +204,9 @@ const Example02 = () => {
 
          {/* 공통 : ag그리드  */}
         <div className="guidetitle mt-10">5.input 재정의 </div>
-        <div className=" flex">
+        <div className=" flex flex-wrap">
            
-            <div className="flex gap-4"> 
+            <div className="flex flex-wrap gap-4"> 
               <div class="h_field flex items-center gap-2">
                 <label for="firstname5" class="p-sr-only">기본 input </label>
                 <InputText value={value} onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>  
@@ -219,8 +219,6 @@ const Example02 = () => {
                       <InputText placeholder="입력해주세요" />
                   </IconField>
                 </div>
-
-               
             </div>
 
         </div> 
@@ -274,7 +272,7 @@ const Example02 = () => {
 
 
          <div className="guidetitle mt-10">6.모달정의 resizable=false(모달사이즈 고정) / 드래그앤드랍=가능 / width와 height을 직접조절  </div>
-        <div className=" flex gap-8">
+        <div className=" flex flex-wrap gap-4">
             <Button label="1.기본 그리드 모달팝업" onClick={() => setVisible(true)} />
             <Dialog header="사용자정보 상세조회" visible={visible} modal={false} resizable={false} style={{ width: '50vw' }} className="user-dialog" onHide={() => {if (!visible) return; setVisible(false); }} footer={footerContent}>
                 {/* 공통 : ag그리드  */}
