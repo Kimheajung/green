@@ -54,50 +54,65 @@ const Layout07 = () => {
 
  const tableData = [
     // 공통업무화면
-    { group: "공통업무화면", title: "1.로그인", link: "/example02", desc: "", status: "미작업", date: "25.11.18" },
-    { group: "공통업무화면", title: "2.데시보드", link: "/example02", desc: "", status: "미작업", date: "25.11.18" },
-    { group: "공통업무화면", title: "3.제품코드 발번요청", link: "/example02", desc: "", status: "미작업", date: "25.11.18" },
+    { group: "공통업무화면", title: "1.데시보드", link: "/example02", desc: "", status: "작업중", date: "25.11.18" },
+    { group: "공통업무화면", title: "2.기준-레이아웃", link: "/layout01", desc: "", status: "작업완료", date: "25.11.18" },
+    { group: "공통업무화면", title: "3.로그인", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "공통업무화면", title: "4.데시보드", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "공통업무화면", title: "5.제품코드 발번요청", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
 
     // PDA
     { group: "PDA", title: "********1월부터 진행예정********", link: "/", status: " ", date: " " },
-    { group: "PDA", title: "1.입고 / 자가생산입고(개별)", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "2.입고 / 자가생산입고(일괄)", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "3.입고 / 자가생산 입고내역조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "4.입고 / 외주생산입고(개별)", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "5.입고 / 외주생산입고(일괄)", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "6.입고 / 반품입고", link: "/layout06", status: "미작업", date: "25.11.18" },
+    { group: "PDA", title: "1.입고 / 자가생산입고(개별)", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "2.입고 / 자가생산입고(일괄)", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "3.입고 / 자가생산 입고내역조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "4.입고 / 외주생산입고(개별)", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "5.입고 / 외주생산입고(일괄)", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "6.입고 / 반품입고", link: "/layout06", status: "작업전", date: "25.11.18" },
 
-    { group: "PDA", title: "7.출고 / 생산투입 대상조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "8.출고 / 생산투입", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "9.출고 / 생산투입 내역조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "10.출고 / 판매출고", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "11.출고 / 판매출고 내역조회", link: "/layout06", status: "미작업", date: "25.11.18" },
+    { group: "PDA", title: "7.출고 / 생산투입 대상조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "8.출고 / 생산투입", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "9.출고 / 생산투입 내역조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "10.출고 / 판매출고", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "11.출고 / 판매출고 내역조회", link: "/layout06", status: "작업전", date: "25.11.18" },
 
-    { group: "PDA", title: "12.기타 / 기타출고", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "13.기타 / 재고변경", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "14.기타 / 재고이동", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "15.기타 / 재고실사 계획조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "16.기타 / 재고실사등록", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "17.기타 / 팔렛병합", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "18.기타 / 팔렛정보조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "PDA", title: "19.기타 / 제품검수", link: "/layout06", status: "미작업", date: "25.11.18" },
+    { group: "PDA", title: "12.기타 / 기타출고", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "13.기타 / 재고변경", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "14.기타 / 재고이동", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "15.기타 / 재고실사 계획조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "16.기타 / 재고실사등록", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "17.기타 / 팔렛병합", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "18.기타 / 팔렛정보조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "PDA", title: "19.기타 / 제품검수", link: "/layout06", status: "작업전", date: "25.11.18" },
 
 
     // 라벨발행
     { group: "라벨발행", title: "********12월부터 진행예정********", link: "/", status: " ", date: " " },
-    { group: "라벨발행", title: "1.자가생산 라벨발행", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "2.자가생산 라벨발행 이력조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "3.외주생산라벨발행", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "4.외주생산라벨발행 이력조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "5.영업반품 라벨발행", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "6.영업반품 라벨발행 이력조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "7.제품라벨발행", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "8.제품라벨발행 이력조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "9.재고라벨발행", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "10.재고라벨발행 이력조회", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "11.잔량라벨 수동발행", link: "/layout06", status: "미작업", date: "25.11.18" },
-    { group: "라벨발행", title: "12.프로그램설정", link: "/layout06", status: "미작업", date: "25.11.18" },
+    { group: "라벨발행", title: "1.자가생산 라벨발행", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "2.자가생산 라벨발행 이력조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "3.외주생산라벨발행", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "4.외주생산라벨발행 이력조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "5.영업반품 라벨발행", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "6.영업반품 라벨발행 이력조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "7.제품라벨발행", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "8.제품라벨발행 이력조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "9.재고라벨발행", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "10.재고라벨발행 이력조회", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "11.잔량라벨 수동발행", link: "/layout06", status: "작업전", date: "25.11.18" },
+    { group: "라벨발행", title: "12.프로그램설정", link: "/layout06", status: "작업전", date: "25.11.18" },
   ];
+
+  const getStatusClass = (status) => {
+    switch (status) {
+      case "작업중":
+        return "text-orange-300";   
+      case "작업완료":
+        return "text-blue-600";    
+      case "작업전":
+        return "text-gray-400";     
+      default:
+        return "text-black-600 ";
+    }
+  };
 
   // 메뉴 필터링 상태
   const [selectedMenu, setSelectedMenu] = useState("전체");
@@ -202,7 +217,7 @@ const Layout07 = () => {
               ) : null}
 
               <td>
-                <Link className="text-blue-600 hover:underline" to={item.link}>
+                <Link className={`text-right ${getStatusClass(item.status)}`} to={item.link}>
                   {item.title}
                 </Link>
               </td>

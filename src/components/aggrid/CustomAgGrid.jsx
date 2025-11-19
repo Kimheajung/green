@@ -1,30 +1,3 @@
-
-// --- AG Grid Enterprise: 개발환경에서만 활성화 ---
-if (import.meta.env.MODE === "development") {
-  (async () => {
-    console.log("AG Grid Enterprise Enabled (DEV mode)");
-
-    try {
-      // Enterprise 모듈 로드
-      const { LicenseManager, AllEnterpriseModule } = await import("ag-grid-enterprise");
-      const { ModuleRegistry } = await import("ag-grid-community");
-
-      // License 적용
-      LicenseManager.setLicenseKey(
-        'Using_this_{AG_Grid}_Enterprise_key_{AG-105090}_...'
-      );
-
-      // Enterprise 모듈 등록
-      ModuleRegistry.registerModules([AllEnterpriseModule]);
-
-    } catch (err) {
-      console.error("AG Grid Enterprise Load Error:", err);
-    }
-  })();
-} else {
-  console.log("AG Grid Enterprise DISABLED (Production)");
-}
-
 import {
   forwardRef,
   useCallback,
@@ -45,9 +18,6 @@ import {
   MonthPickerEditor,
   ImageRenderer,
 } from './CustomCellEditors';
-
-
-
 
 const CustomAgGrid = forwardRef(
   (
@@ -550,28 +520,26 @@ const CustomAgGrid = forwardRef(
       return [sumRow];
     }, [rowData, sumFields, pinnedBottomConfig]);
     return (
-      <div className="ag-theme-quartz" style={{ height: '100%' }}>
-        <AgGridReact
-          ref={gridRef}
-          rowData={rowData}
-          // columnDefs={colDefs}
-          columnDefs={enhancedColDefs}
-          columnTypes={columnTypes}
-          defaultColDef={handleDefaultColDef}
-          rowSelection={rowSelection}
-          theme={myTheme}
-          gridOptions={gridOptions}
-          onGridReady={handleGridReady}
-          onRowClicked={handleRowClicked}
-          onCellClicked={onCellClicked}
-          onSelectionChanged={handleSelectionChanged}
-          getMainMenuItems={getMainMenuItems}
-          // getContextMenuItems={getContextMenuItems}
-          pinnedBottomRowData={pinnedBottomRowData}
-          localeText={AG_GRID_LOCALE_KR}
-          {...restProps}
-        />
-      </div>
+      <AgGridReact
+        ref={gridRef}
+        rowData={rowData}
+        // columnDefs={colDefs}
+        columnDefs={enhancedColDefs}
+        columnTypes={columnTypes}
+        defaultColDef={handleDefaultColDef}
+        rowSelection={rowSelection}
+        theme={myTheme}
+        gridOptions={gridOptions}
+        onGridReady={handleGridReady}
+        onRowClicked={handleRowClicked}
+        onCellClicked={onCellClicked}
+        onSelectionChanged={handleSelectionChanged}
+        getMainMenuItems={getMainMenuItems}
+        // getContextMenuItems={getContextMenuItems}
+        pinnedBottomRowData={pinnedBottomRowData}
+        localeText={AG_GRID_LOCALE_KR}
+        {...restProps}
+      />
     );
   }
 );

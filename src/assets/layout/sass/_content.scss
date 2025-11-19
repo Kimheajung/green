@@ -140,6 +140,20 @@
   }
 }
 
+
+/* 모바일 전용 */
+@media (max-width: 991px) {
+  .hugreen_searchwrap {
+    justify-content: center;
+  }  
+
+  .m_filter_text{
+    color: #8A929F !important;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+} 
+
 .hugreen_aggridbtn_hwrap{
     display: flex;
     width: 100%;

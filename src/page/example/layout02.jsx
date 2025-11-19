@@ -183,10 +183,9 @@ const Layout02 = () => {
                       {/* Accordion Header */}
                       <button
                       type="button"
-                      className="w-full flex justify-center items-center"
+                      className="flex m_filter_text"
                       onClick={() => setActiveIndex(activeIndex === 0 ? -1 : 0)}>
-                      {activeIndex === 0 ? "숨기기" : "보기"}
-                      <i className={`pi pi-chevron-${activeIndex === 0 ? "up" : "down"}`} />
+                      {activeIndex === 0 ? "검색필터 숨기기" : "검색필터 펼치기"}                     
                       </button>
     
                       {/* Accordion Content with Smooth Animation */}
