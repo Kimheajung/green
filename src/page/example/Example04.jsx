@@ -12,6 +12,7 @@ import { Checkbox } from "primereact/checkbox";
 import { Dialog } from 'primereact/dialog';
 import { FileUpload } from 'primereact/fileupload';
 import { Calendar } from 'primereact/calendar';
+import { InputSwitch } from "primereact/inputswitch";
 
 
 import CustomAgGrid from '@components/aggrid/CustomAgGrid';
@@ -20,6 +21,7 @@ import MOCK_DATA3 from '@components/aggrid/MOCK_DATA3.json';
 
 const Example04 = () => {
 
+  const [checked, setChecked] = useState(false);
   /* 달력 */
   const [date, setDate] = useState(null);
 
@@ -143,17 +145,21 @@ const Example04 = () => {
 
                  <div className="flex w-full">
                        <div className="grid-searchwrap">
-                         <div className="row">
+                         <div className="row" >
                            <div className="th"> <label for="firstname5">오더일자1</label></div>
-                           <div className="td">
-                             <Calendar value={date} className="w-full" onChange={(e) => setDate(e.value)} showIcon /> 
+                            <div className="td merge-3 gap-2">
+                             <InputText value={value}  onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>
+                              <div className="flex items-center ml-5 gap-2">    
+                                <label>부가세포함</label>
+                                <InputSwitch checked={checked} onChange={(e) => setChecked(e.value)} />    
+                              </div>                    
                            </div>
                          </div>
                        </div>
                      </div>
               </div>
               
-              <div className="flex search-btn-wrap">
+              <div className="flex search-btn-wrap">  
                 <Button label="검색" text  className="search-btn"/>
               </div>
             </div>

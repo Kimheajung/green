@@ -99,6 +99,20 @@ const Layout07 = () => {
     { group: "라벨발행", title: "10.재고라벨발행 이력조회", link: "/layout06", status: "작업전", date: "25.11.18" },
     { group: "라벨발행", title: "11.잔량라벨 수동발행", link: "/layout06", status: "작업전", date: "25.11.18" },
     { group: "라벨발행", title: "12.프로그램설정", link: "/layout06", status: "작업전", date: "25.11.18" },
+
+    // 건자재PC
+    { group: "건자재PC", title: "1.건설현장 > 건설현장정보등록", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "2.코드관리 > 속성마스터", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "2.코드관리 > 계층정보", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "2.코드관리 > 금형마스터", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "2.코드관리 > 제품코드생성(프로파일)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "2.코드관리 > 제품코드생성(부자재)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "3.자가생산관리 > 생산접수(B)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "3.자가생산관리 > 현황등록(B)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "3.자가생산관리 > 생산현황(B)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "3.자가생산관리 > 현황등록", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "4.비용관리 > 회계전표등록(이하동일 - 입력양식)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "5.현황관리 > 현장별 정산서(?)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
   ];
 
   const getStatusClass = (status) => {
@@ -117,7 +131,7 @@ const Layout07 = () => {
   // 메뉴 필터링 상태
   const [selectedMenu, setSelectedMenu] = useState("전체");
 
-  const menuList = ["전체", "공통업무화면", "PDA", "라벨발행"];
+  const menuList = ["전체", "공통업무화면", "PDA", "라벨발행", "건자재PC"];
 
   const filteredData =
     selectedMenu === "전체"

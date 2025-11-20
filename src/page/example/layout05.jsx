@@ -249,9 +249,7 @@ const Layout05 = () => {
                           <p class="totalNumText" >총&nbsp;<span>18,203</span>건</p>
                         </div>
                         <div className="flex gap-2"> 
-                        <Button label="저장" className="btn-28-intable" severity="secondary" outlined /> 
-                        <Button label="삭제" className="btn-28-sec" severity="secondary" outlined /> 
-                        <Button label="검색" className="btn-28-master" severity="secondary" outlined />
+                          <Button label="엑셀 다운로드" className="btn-28-sec" severity="secondary" outlined /> 
                       </div>
                     </div>
                     {/* 공통 : ag그리드  */}
@@ -282,9 +280,7 @@ const Layout05 = () => {
                         <p class="totalNumText" >총&nbsp;<span>18,203</span>건</p>
                       </div>
                       <div className="flex gap-2"> 
-                      <Button label="저장" className="btn-28-intable" severity="secondary" outlined /> 
-                      <Button label="삭제" className="btn-28-sec" severity="secondary" outlined /> 
-                      <Button label="검색" className="btn-28-master" severity="secondary" outlined />
+                          <Button label="엑셀 다운로드" className="btn-28-sec" severity="secondary" outlined /> 
                     </div>
                   </div>
                   {/* 공통 : ag그리드  */}

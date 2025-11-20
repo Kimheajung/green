@@ -12,7 +12,19 @@ import { FileUpload } from 'primereact/fileupload';
 import { Dialog } from 'primereact/dialog';
 import { Editor } from 'primereact/editor';
 import { Calendar } from 'primereact/calendar';
-
+import {
+  DtPicker,
+  FormAutoComplete,
+  FormAutoCompleteMulti,
+  FormDropdown,
+  FormEditor,
+  FormInputNumber,
+  FormInputText,
+  FormPassword,
+  FormTextArea,
+  MonthPicker,
+  YearPicker,
+} from '../../components/form/UseFormControl';
 
 import CustomAgGrid from '@components/aggrid/CustomAgGrid';
 import MOCK_DATA3 from '@components/aggrid/MOCK_DATA3.json';
@@ -22,6 +34,8 @@ import MOCK_DATA3 from '@components/aggrid/MOCK_DATA3.json';
 const Layout03 = () => {
   /* 달력 */
   const [date, setDate] = useState(null);
+  const [month, setMonth] = useState(null); // 월
+  const [year, setYear] = useState(null); // 년
 
  const [text, setText] = useState('');
   /* 즐겨찾기 아이콘  */
@@ -242,8 +256,19 @@ const Layout03 = () => {
             <div className="flex w-full">
              <div className="dtv-info-grid dtv-info-grid--6col">
                 <div className="row">
-                  <div className="th">제목</div>
-                  <div className="td"><InputText value={value} onChange={(e) => setValue(e.target.value)}  placeholder="입력해주세요"/>  </div>
+                  <div className="th">년,월 선택</div>
+                  <div className="td gap-2">
+                     <MonthPicker
+                      value={month}
+                      onChange={setMonth}
+                      placeholder="월 선택"
+                    />
+                    <YearPicker
+                      value={year}
+                      onChange={setYear}
+                      placeholder="년도 선택"
+                    />
+                  </div>
                   <div className="th">제목</div>
                   <div className="td"><InputText value={value} onChange={(e) => setValue(e.target.value)}  placeholder="입력해주세요"/>  </div>
                   <div className="th">제목</div>

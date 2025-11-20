@@ -168,6 +168,19 @@
         margin-right:1rem;
         color:#7E84A3;
     }
+    .InfoText{
+        font-weight: 400;
+        margin-right:1rem;
+        color: #6B8DE0 !important;
+
+        &::before{
+          content: ' * ';
+          display: inline-block;
+          box-sizing: border-box;
+          margin-right: 5px;
+          vertical-align: middle;
+        }
+    }
     .totalNumText{
         font-weight: 600;
         span {color: $color-primary;}

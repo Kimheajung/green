@@ -13,7 +13,8 @@ import { Dialog } from 'primereact/dialog';
 import { FileUpload } from 'primereact/fileupload';
 import { Calendar } from 'primereact/calendar';
 import { Tag } from 'primereact/tag';
-
+import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
+import { Toast } from 'primereact/toast';
 import CodeBox from "@/components/form/CodeBox";
 
 
@@ -22,6 +23,8 @@ import MOCK_DATA3 from '@components/aggrid/MOCK_DATA3.json';
 
 
 const Example02 = () => {
+  /* 모바일 검색영역 감추기 */
+  const [activeIndex, setActiveIndex] = useState(null);
 
   /* 달력 */
   const [date, setDate] = useState(null);
@@ -138,6 +141,68 @@ const Example02 = () => {
   );
 
 
+  
+  // 검색영역 폼 
+  const SearchForm = ({ value, setValue, selectedCity, setSelectedCity, cities }) => (
+    <div className="flex w-full">
+      <div className="grid-searchwrap grid-searchwrap--6col">
+      
+        <div className="row">
+          <div className="th"> <label for="firstname5">오더일자</label></div>
+          <div className="td">
+            <InputText value={value} onChange={(e) => setValue(e.target.value)} className="w-full" placeholder="선택해주세요"/>  
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  );
+
+
+  /* 컨펌 다이얼로그 */
+   const toast = useRef(null);
+
+  // 예시
+    let dialogRef;
+
+    const accept = () => {
+        if (dialogRef) dialogRef.hide(); // 창 강제 닫기
+    };
+
+    const reject = () => {
+        if (dialogRef) dialogRef.hide(); // 창 강제 닫기
+    };
+
+    const confirm1 = () => {
+        confirmDialog({
+            className: " no-header",
+            header: null,              // 헤더 제거
+            closable: false,           // X 버튼 제거
+            message: '찾으시는 데이터가 없습니다. 그래도 그리드에 저장하시겟습니까?',
+            defaultFocus: 'accept',
+            accept,            
+            reject,
+            rejectClassName: "p-button-outlined custom-reject mr-2"
+        });
+    };
+
+    const confirm2 = () => {
+        confirmDialog({
+            className: " no-header",
+            header: null,              // 헤더 제거
+            closable: false,           // X 버튼 제거
+            message: '삭제하시겠습니까 설정이 저장됩니다.',
+            defaultFocus: 'reject',
+            acceptClassName: 'accept',
+            accept,
+            reject,
+            rejectClassName: "p-button-outlined custom-reject mr-2"
+        });
+    };
+
+
+
+
   return (
     <div className="card_etc">  
 
@@ -220,17 +285,56 @@ const Example02 = () => {
         <div className=" flex flex-wrap">
            
             <div className="flex flex-wrap gap-4"> 
-              <div class="h_field flex items-center gap-2">
-                <label for="firstname5" class="p-sr-only">기본 input </label>
-                <InputText value={value} onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>  
+              <div class="flex flex-wrap w-full items-center gap-4">
+                <div>
+                  <label for="firstname5" class="p-sr-only mr-4">기본 input </label>
+                  <InputText value={value} onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>  
+                </div>
+                 <div>
+                  <label for="firstname5" class="p-sr-only mr-4">Disable </label>
+                  <InputText value={value} onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"  disabled={true}/>  
+                </div>
+                
+                 <div>
+                  <label for="firstname5" class="p-sr-only mr-4">숫자만 입력 </label>
+                  <InputText
+                    value={value}
+                    onChange={(e) => {
+                      const onlyNum = e.target.value.replace(/[^0-9]/g, "");  // 숫자만
+                      setValue(onlyNum);
+                    }}
+                    placeholder="숫자만 입력해주세요"
+                  />
+                </div>
+                 <div className="flex relative">
+                    <label for="firstname6" class="p-sr-only mr-4">입력시 </label>
+                    <InputText
+                      value={value}
+                      onChange={(e) => setValue(e.target.value)}
+                      placeholder="선택해주세요"
+                      className="pr-8"   // X버튼 공간 확보
+                    />
+                    {value && (
+                      <button
+                        type="button"
+                        onClick={() => setValue("")}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                      >
+                        <i className="pi pi-times"></i>
+                      </button>
+                    )}
+                  </div>
+
               </div>
 
-               <div class="h_field flex items-center gap-2">
-                  <label for="firstname5" class="p-sr-only">검색아이콘 input</label>
+               <div class="flex flex-wrap  w-full items-center gap-2">
+                  <label for="firstname5" class="p-sr-only  mr-4">검색아이콘 input</label>
+                  <div>
                   <IconField iconPosition="right">
                       <InputIcon className="pi pi-search"> </InputIcon>
                       <InputText placeholder="입력해주세요" />
                   </IconField>
+                  </div>
                 </div>
             </div>
 
@@ -257,7 +361,7 @@ const Example02 = () => {
         </div> 
 
 
-        <div className="guidetitle mt-10">6.여기부터 재정의 combo 재정의 </div>
+        <div className="guidetitle mt-10">6.combo 재정의 </div>
         <div className=" flex">
            <div class="h_field flex items-center gap-2">
               <label for="firstname5" class="p-sr-only">기본 combo </label>
@@ -348,23 +452,42 @@ const Example02 = () => {
             <Dialog header="2.모달" visible={visible5} modal={false} resizable={false} style={{ width: '50vw' }} className="user-dialog" onHide={() => setVisible5(false)} footer={footerContent}>
                 {/* 공통 : ag그리드  */}
                 <div className="flex flex-wrap w-full">
-                  <div className="hugreen_searchwrap" >
-                    <div className="flex w-[90%]">
-                      <div className="flex w-full">
-                            <div className="grid-searchwrap">
-                              <div className="row">
-                                <div className="th"> <label for="firstname5">현장선택</label></div>
-                                <div className="td">
-                                  <Calendar value={date} className="w-full" onChange={(e) => setDate(e.value)} showIcon /> 
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                  
+                  {/* PC (md 이상) */}
+                  <div className="hugreen_searchwrap hidden md:flex transition-all duration-300">
+                    <div className="flex">
+                    <SearchForm value={value} setValue={setValue} selectedCity={selectedCity} setSelectedCity={setSelectedCity} cities={cities} />
                     </div>
                     <div className="flex search-btn-wrap">
                       <Button label="검색" text  className="search-btn"/>
                     </div>
                   </div>
+
+                  {/* 모바일 (sm 이하) */}
+                  <div className="w-full md:hidden">
+                    <div className="hugreen_searchwrap overflow-hidden">
+                      {/* Accordion Header */}
+                      <button
+                      type="button"
+                      className="flex m_filter_text"
+                      onClick={() => setActiveIndex(activeIndex === 0 ? -1 : 0)}>
+                      {activeIndex === 0 ? "검색필터 숨기기" : "검색필터 펼치기"}                     
+                      </button>
+    
+                      {/* Accordion Content with Smooth Animation */}
+                      <div
+                      className={`overflow-hidden transition-all duration-300  ${
+                      activeIndex === 0 ? "max-h-[500px] p-0" : "max-h-0 p-0"} `}>
+                        <div className="flex">
+                          <SearchForm value={value} setValue={setValue} selectedCity={selectedCity} setSelectedCity={setSelectedCity} cities={cities} />
+                        </div>
+                        <div className="flex search-btn-wrap">
+                          <Button label="검색" text  className="search-btn"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* 공통 : 그리드 상단 버튼  */}
                   <div className="hugreen_aggridbtn_hwrap">
                     <div className="flex">
@@ -480,6 +603,18 @@ const Example02 = () => {
 
                   </div>
               </Dialog>  
+            </div>
+        </div> 
+
+
+
+
+         <div className="guidetitle mt-10">9. 메시지 팝업 </div>
+        <div className=" flex">
+          <div className='flex flex-wrap gap-2'>
+              <ConfirmDialog />
+              <Button onClick={confirm1}  label="저장 예시"></Button>
+              <Button onClick={confirm2}  label="삭제 예시"></Button>
             </div>
         </div> 
 

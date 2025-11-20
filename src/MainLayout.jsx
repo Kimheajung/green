@@ -135,6 +135,7 @@ const [activeLeftMenu, setActiveLeftMenu] = useState(null);
         { label: '3. 검색+상세보기+그리드', icon: '', to: '/layout04' },
         { label: '4. 좌우 레이아웃', icon: '', to: '/layout05' },
         { label: '5. 위아래 레이아웃', icon: '', to: '/layout06' },
+        { label: '6. 그리드만 있는 레이아웃', icon: '', to: '/layout08' },
       ],
     }
     // ... 필요 메뉴 그대로 복사
@@ -153,6 +154,28 @@ const [activeLeftMenu, setActiveLeftMenu] = useState(null);
     'layout-theme-light': layoutColorMode === 'light',
   });
   
+
+  // TOP 버튼 노출 여부
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  // 스크롤 감지
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 최상단 이동 함수
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <div className={wrapperClass} onClick={onWrapperClick}>
@@ -176,6 +199,16 @@ const [activeLeftMenu, setActiveLeftMenu] = useState(null);
 
       <div className="layout-main-container">
         <div className="layout-main">{children}</div>
+
+        {/*  페이지 top */}
+        {showTopBtn && (
+         <button
+            onClick={scrollToTop}
+            className="top-button"
+          >
+            <i className="pi pi-arrow-up text-xl"></i>
+          </button>
+        )}
       </div>
 
       {/* 임시삭제 */}

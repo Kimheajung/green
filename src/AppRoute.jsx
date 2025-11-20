@@ -26,6 +26,7 @@ import Layout04 from './page/example/layout04.jsx';
 import Layout05 from './page/example/layout05.jsx';
 import Layout06 from './page/example/layout06.jsx';
 import Layout07 from './page/example/layout07.jsx';
+import Layout08 from './page/example/layout08.jsx';
 // 임시 Forbidden. 추후 인증 로직 추가 가능.
 function Forbidden({ component }) {
   // 조건이 false면 로그인으로 보내는 식으로 확장
@@ -294,6 +295,18 @@ export default function AppRoute() {
             component={
               <MainLayout>
                 <Layout07 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/layout08"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Layout08 />
               </MainLayout>
             }
           />
