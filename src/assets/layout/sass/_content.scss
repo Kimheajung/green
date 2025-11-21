@@ -75,7 +75,7 @@
   align-items: center;
   margin-bottom: 20px;
   padding: 1rem;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   color: #555;
 
@@ -126,6 +126,11 @@
     button {
       background-color: #00485D;
       color:#fff;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
      button.in {
       background-color: #bababa !important;
@@ -143,9 +148,10 @@
 
 /* 모바일 전용 */
 @media (max-width: 991px) {
+
   .hugreen_searchwrap {
-    justify-content: center;
-  }  
+    flex-wrap: wrap !important;
+  }
 
   .m_filter_text{
     color: #8A929F !important;
@@ -211,20 +217,13 @@
     //padding: 0 1rem;
 }
 
-@media (max-width: 991px) {
-   .layout-main-container {
-    padding: 5.286rem 1rem 1rem 1rem;
-    }
-
-    .hugreen_searchwrap .flex .h_formgroup-inline .h_field {
-        justify-content: left;
-    }
-
-    
-} 
 
 
-@media (max-width: 450px) {    
+
+
+
+
+@media (max-width: 991px) {    
     .search-btn-wrap {width: 100% !important;margin-top:1rem;}
     .search-btn {
         width: 100% !important;
