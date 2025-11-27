@@ -214,7 +214,7 @@ const Layout09view = () => {
                <div className="flex">
                   <span className="InfoText"> 금호석유화학의 소식과 공지사항을 여러분께 알려드리는 공간입니다.</span>
                </div>
-               <div className="flex gap-2"> 
+               <div className="flex  gap-2"> 
                 <Link to="/layout09"><Button label="목록" className="btn-28-sec" severity="secondary" outlined /> </Link>
                 <Button label="수정" className="btn-28-sec" severity="secondary" outlined />
                  <Button label="삭제" className="btn-28-sec" severity="secondary" outlined />
@@ -222,7 +222,7 @@ const Layout09view = () => {
               </div>
             </div>
             {/* 공통 : ag그리드  */}
-           <div className="flex w-full">
+           <div className="flex  w-full">
              <div className="dtv-info-grid dtv-info-grid--4col">
               
                 <div className="row">
@@ -258,7 +258,7 @@ const Layout09view = () => {
                 <div className="row">
                   <div className="th">내용</div>
                   <div className="td merge-3">
-                    <div className="span">
+                    <div className="fulltext">
                         
                         내용	안녕하십니까.
                         예산건자재공장 12월 휴무 일정을 공지드리오니, 업무에 참고하시기 바랍니다.

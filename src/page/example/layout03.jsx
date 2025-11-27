@@ -197,7 +197,7 @@ const Layout03 = () => {
                  <div className="row">
                   <div className="th">첨부파일</div>
                   <div className="td">
-                    <div className='flex  gap-2'>
+                    <div className='flex flex-wrap  gap-2'>
                       <InputText value={value} onChange={(e) => setValue(e.target.value)}  placeholder="입력해주세요"/>
                       <Button label="찾아보기" className="btn-32-intable" severity="secondary" outlined onClick={() => setVisible(true)}/> 
                       <span className="notice point1"> * 기타 옵션이나 간단한 설명이 필요할 경우 사용</span>

@@ -50,7 +50,14 @@ $font-size-base: 1rem;
       font-weight: 300;
       color: $color-tdtext;
       line-height: 2.2857rem !important;
+      .fulltext {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: initial !important;
+        word-break: break-word !important;
+      }
     }
+    
      .merge-2 {
       grid-column: span 2; 
     }
