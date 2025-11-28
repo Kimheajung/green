@@ -139,7 +139,7 @@ $font-size-base: 1rem;
 
   .row {
     display: grid;
-    grid-template-columns: 10% 20% 10% 20%;
+    grid-template-columns: 8% 20% 8% 20%;
     border-bottom: 0px solid $color-border;
 
     > div {
@@ -287,28 +287,28 @@ $font-size-base: 1rem;
 // ② 4컬럼 구조 (th,td,th,td)
 .grid-searchwrap--2col {
   .row {
-    grid-template-columns: 10% 92%;
+    grid-template-columns: 8% 92%;
   }
 }
 
 // ② 4컬럼 구조 (th,td,th,td)
 .grid-searchwrap-4col {
   .row {
-    grid-template-columns: 10% 20% 10% 20%;
+    grid-template-columns: 8% 20% 8% 20%;
   }
 }
 
 // ② 6컬럼 구조 (th,td,th,td,th,td)
 .grid-searchwrap--6col {
   .row {
-    grid-template-columns: 10% 20% 10% 20% 10% 20%;
+    grid-template-columns: 8% 20% 8% 20% 8% 20%;
   }
 }
 
 // ② 6컬럼 구조 (th,td,th,td,th,td)
 .grid-searchwrap--8col {
   .row {
-    grid-template-columns: 10% 15% 10% 15% 10% 15% 10% 15%;
+    grid-template-columns: 8% 15% 8% 15% 8% 15% 8% 15%;
   }
 }
 

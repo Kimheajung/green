@@ -108,7 +108,7 @@
 
   .flex {
     display: flex;
-    gap: 1rem; // flex 간격 조정 (필요시)    
+    gap: .5rem; // flex 간격 조정 (필요시)    
     justify-content: start;
     align-items: left;
     flex-wrap: wrap;

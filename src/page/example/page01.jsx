@@ -9,6 +9,7 @@ import { InputText } from "primereact/inputtext";
 import { Dropdown } from 'primereact/dropdown';
 import { RadioButton } from 'primereact/radiobutton';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
+import { Calendar } from 'primereact/calendar';
 import { Tooltip } from 'primereact/tooltip';
 
 import CustomAgGrid from '@components/aggrid/CustomAgGrid';
@@ -16,13 +17,17 @@ import MOCK_DATA3 from '@components/aggrid/MOCK_DATA3.json';
 
 
 
-const Layout06 = () => {
-      //툴팁
-  const bellRef = useRef(null);  
+const page01 = () => {
 
+    //툴팁
+  const bellRef = useRef(null);  
+  
+  /* 달력 */
+  const [date, setDate] = useState(null);
+  
   /* 모바일 검색영역 감추기 */
   const [activeIndex, setActiveIndex] = useState(null);
-  
+
   /* 즐겨찾기 아이콘  */
   const [filled, setFilled] = useState(false);
 
@@ -94,13 +99,29 @@ const Layout06 = () => {
   ]);
 
   /* 스플리터 모바일 대응 */
-  const [layout, setLayout] = useState('vertical');
+  const [layout, setLayout] = useState('horizontal');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setLayout('vertical');  // 모바일: 위아래
+      } else {
+        setLayout('horizontal'); // PC: 좌우
+      }
+    };
+
+    handleResize(); // 초기 실행
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   // 검색영역 폼 
   const SearchForm = ({ value, setValue, selectedCity, setSelectedCity, cities }) => (
     
-    <div className="flex w-full">
-      <div className="grid-searchwrap grid-searchwrap--8col">
+
+     <div className="flex w-full">
+      <div className="grid-searchwrap grid-searchwrap--6col">
       
         <div className="row">
           <div className="th"> <label for="firstname5">오더일자</label></div>
@@ -112,42 +133,41 @@ const Layout06 = () => {
             <div className="flex">
               <IconField iconPosition="right">
                   <InputIcon className="pi pi-search"> </InputIcon>
-                  <InputText placeholder="입력해주세요"  className="w-full"/>
+                  <InputText placeholder="입력해주세요"  className="w-full" />
               </IconField>
             </div>
-            
           </div>
-          <div className="th">납품요청일 변경기일</div>
+          <div className="th">시스템명</div>
           <div className="td">
             <Dropdown value={selectedCity}  className="w-full" onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
-                placeholder="선택해주세요"/>
-          </div>
-            <div className="th">작업대상설정</div>
-          <div className="td gap-2">
-              <div className="flex align-items-center">
-              <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
-              <label htmlFor="ingredient1">주문</label>
-              </div>
-              <div className="flex align-items-center">
-                <RadioButton inputId="ingredient2" name="pizza" value="Mushroom" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Mushroom'} />
-                <label htmlFor="ingredient2">납품번호</label>
-              </div>
+               placeholder="선택해주세요"/>
           </div>
         </div>
 
-        
+        <div className="row">
+          <div className="th">오더번호</div>
+          <div className="td">
+            <Calendar value={date} className="w-full" onChange={(e) => setDate(e.value)} showIcon />
+          </div>
+          <div className="th">공정구분</div>
+          <div className="td">
+            <Dropdown value={selectedCity}  className="w-full" onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+               placeholder="선택해주세요"/>
+          </div>
+        </div>
         
       </div>
     </div>
+   
   );
 
 
   return (
-    <div className="card height-01">  
+    <div className="card height-02" > 
         {/* 공통 : 타이틀영역 */}
         <div className="title-container">
             <div  className="flex gap-4">
-              <h2>5.레이아웃 spliter vertical </h2>
+              <h2>프로젝트 - 건설현장관리 - 건설현장정보등록 </h2>
               <div className="flex gap-2">
               {/* 공통 : 메뉴별 새창열기 */}
               <Button
@@ -181,27 +201,27 @@ const Layout06 = () => {
             </div>
         </div>
 
-         {/* 공통 : 업무영역에 대한 도움말 사이드바 */}
-        <Sidebar visible={visibleRight} position="right" onHide={() => setVisibleRight(false)} className="favorite-help-sidebar">
-          <h3 className="absolute top-[1.6rem]"> 업무영역별 도움말</h3>
+       
 
-          <img src="/green/images/sample.png" alt="main" className="max-w-none"  />
-
-          <p>기능설명</p>
-          <span>
-           1. 각 업무화면의 매뉴얼 버튼을 클릭하면 해당화면의 주요기능을 설명하는 화면이 제공됩니다. <br/>
-           2. 이미지가 있으면 이미지 업로드 하게 만들면 됩니다.
-          </span>
+        {/* 공통 : 업무영역에 대한 도움말 사이드바 */}
+        <Sidebar visible={visibleRight} position="right" onHide={() => setVisibleRight(false)}>
+          <h2> 업무영역별 도움말R</h2>
+          <span>이미지 + 해당화면 업무설명</span>
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
         </Sidebar>
 
 
         {/* 공통 case01 : 검색영역 + 그리드 버튼 + 그리드영역 */}
-        <div className="hugreen_grid flex flex-1 flex-wrap md:flex-row">
+        <div className="hugreen_grid flex flex-1  flex-wrap md:flex-row">
+           
             {/* 공통 검색영역(PC+모바일대응) */}
             <div className="hugreen_grid flex-1 flex flex-wrap">
               {/* PC (md 이상) */}
               <div className="hugreen_searchwrap hidden md:flex transition-all duration-300">
-                <div className="flex">
+                <div className="flex w-[95%]">
                   <SearchForm value={value} setValue={setValue} selectedCity={selectedCity} setSelectedCity={setSelectedCity} cities={cities} />
                 </div>
                 <div className="flex search-btn-wrap">
@@ -213,7 +233,7 @@ const Layout06 = () => {
               <div className="w-full md:hidden">
                 <div className="hugreen_searchwrap overflow-hidden">
                   {/* Accordion Header */}
-                  <button
+                   <button
                   type="button"
                   className="flex m_filter_text"
                   onClick={() => setActiveIndex(activeIndex === 0 ? -1 : 0)}>
@@ -236,20 +256,52 @@ const Layout06 = () => {
               
             </div>
 
+
+
            
             {/* 공통 : 그리드 영역  */}
             <div className="w-full h-full">
             <Splitter className="w-full h-full" layout={layout}>
-              <SplitterPanel className="flex flex-wrap mb-6">
+              <SplitterPanel className="flex items-start" >
+                 <div className="hugreen_wrap">
+                    {/* 공통 : 그리드 상단 버튼  */}
+                    <div className="hugreen_aggridbtn_hwrap">
+                        <div className="flex">
+                          <p class="totalNumText" >총&nbsp;<span>18,203</span>건</p>
+                        </div>
+                        <div className="flex gap-2"> 
+                          <Button label="엑셀 다운로드" className="btn-28-sec" severity="secondary" outlined /> 
+                      </div>
+                    </div>
+                    {/* 공통 : ag그리드  */}
+                    <div className="hugreen_aggrid_hwrap">
+                      <CustomAgGrid
+                          gridId="grid1" // 필수 입력
+                          rowId="ROW_ID" // 필수 입력
+                          ref={gridRef} // 필수 입력
+                          rowData={rowData} // 필수 입력
+                          colDefs={colDefs} // 필수 입력
+                          overrideRowClicked={() => {
+                            return null;
+                          }}
+                          overrideRowSelection={() => {
+                            return null;
+                          }}
+                          onGridReady={(params) => params.api.autoSizeAllColumns()}
+                          // 필요 시 옵션 추가
+                        />
+                    </div>
+                  </div>
+              </SplitterPanel>
+              <SplitterPanel className="flex items-start">
                 <div className="hugreen_wrap">
                   {/* 공통 : 그리드 상단 버튼  */}
                   <div className="hugreen_aggridbtn_hwrap">
                       <div className="flex">
-                        <span className="NumText"> 조회결과</span>
                         <p class="totalNumText" >총&nbsp;<span>18,203</span>건</p>
                       </div>
                       <div className="flex gap-2"> 
-                      <Button label="엑셀 다운로드" className="btn-28-sec" severity="secondary" outlined /> 
+                          <Button label="엑셀 다운로드" className="btn-28-sec" severity="secondary" outlined /> 
                     </div>
                   </div>
                   {/* 공통 : ag그리드  */}
@@ -272,37 +324,6 @@ const Layout06 = () => {
                   </div>
                 </div>
               </SplitterPanel>
-              <SplitterPanel className="flex flex-wrap mt-0">
-                <div className="hugreen_wrap">
-                  {/* 공통 : 그리드 상단 버튼  */}
-                    <div className="hugreen_aggridbtn_hwrap">
-                        <div className="flex">
-                          <p class="totalNumText" >총&nbsp;<span>18,203</span>건</p>
-                        </div>
-                        <div className="flex gap-2"> 
-                          <Button label="엑셀 다운로드" className="btn-28-sec" severity="secondary" outlined /> 
-                        </div>
-                    </div>
-                    {/* 공통 : ag그리드  */}
-                    <div className="hugreen_aggrid_hwrap">
-                      <CustomAgGrid
-                          gridId="grid1" // 필수 입력
-                          rowId="ROW_ID" // 필수 입력
-                          ref={gridRef} // 필수 입력
-                          rowData={rowData} // 필수 입력
-                          colDefs={colDefs} // 필수 입력
-                          overrideRowClicked={() => {
-                            return null;
-                          }}
-                          overrideRowSelection={() => {
-                            return null;
-                          }}
-                          onGridReady={(params) => params.api.autoSizeAllColumns()}
-                          // 필요 시 옵션 추가
-                        />
-                    </div>
-                  </div>
-              </SplitterPanel>
             </Splitter>
             </div>
 
@@ -315,4 +336,4 @@ const Layout06 = () => {
   );
 };
 
-export default Layout06;
+export default page01;

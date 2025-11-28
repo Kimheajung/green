@@ -203,13 +203,15 @@ const Example04 = () => {
                 <div className="grid-searchwrap grid-searchwrap--4col" >
                 
                   <div className="row">
-                    <div className="th merge-5 gap-4">
+                    <div className="th flex-wrap merge-5 gap-2">
                       <Dropdown value={selectedCity}  className="w-28" onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
                           placeholder="제목"/>
+                      <Dropdown value={selectedCity}  className="w-48" onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+                          placeholder="제목"/>
                       <IconField iconPosition="right">
-                              <InputIcon className="pi pi-search"> </InputIcon>
-                              <InputText placeholder="입력해주세요"  className="w-full"/>
-                          </IconField>    
+                          <InputIcon className="pi pi-search"> </InputIcon>
+                          <InputText placeholder="입력해주세요"  className="w-full"/>
+                      </IconField>    
                     </div>
                   </div>
                   </div>  
@@ -248,6 +250,47 @@ const Example04 = () => {
                 <Button label="검색" text  className="search-btn"/>
               </div>
             </div>
+
+
+
+             {/* 공통 : 검색영역1  */}
+            <div className="hugreen_searchwrap" >
+              <div className="flex w-[95%]">
+
+                 <div className="flex w-full">
+                       <div className="grid-searchwrap">
+                         <div className="row" >
+                           <div className="th"> <label for="firstname5">검색기간</label></div>
+                            <div className="td">
+                              <Calendar value={date} className="w-full" onChange={(e) => setDate(e.value)} showIcon /> 
+                              <span className='p-1'> - </span>
+                              <Calendar value={date} className="w-full" onChange={(e) => setDate(e.value)} showIcon />               
+                           </div>
+                           <div className="th flex  merge-2 gap-2">
+                             <div className="flex align-items-center">
+                              <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
+                              <label htmlFor="ingredient1">부가세포함</label>
+                              </div>
+                              <div className="flex align-items-center">
+                                <RadioButton inputId="ingredient2" name="pizza" value="Mushroom" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Mushroom'} />
+                                <label htmlFor="ingredient2">부가세상세</label>
+                              </div> 
+                              <div className="flex align-items-center">
+                                <RadioButton inputId="ingredient2" name="pizza" value="Mushroom" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Mushroom'} />
+                                <label htmlFor="ingredient2">부가세미포함</label>
+                              </div> 
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+              </div>
+              
+              <div className="flex search-btn-wrap">  
+                <Button label="검색" text  className="search-btn"/>
+              </div>
+            </div>
+
+
 
           
            {/* 공통 : 검색영역1  */}
@@ -431,6 +474,139 @@ const Example04 = () => {
 
 
             
+              {/* 공통 : 검색영역1  */}
+              <p> -  응용1 : 주문관리 - 주문조회 </p>
+            <div className="hugreen_searchwrap" >
+              <div className="flex w-[95%]">
+
+                 <div className="flex w-full">
+                       <div className="grid-searchwrap grid-searchwrap--8col">
+                       
+                         <div className="row">
+                           <div className="th"> <label for="firstname5">주문조회</label></div>
+                           <div className="td merge-3 gap-2 flex md:flex-nowrap">
+                              <Dropdown value={selectedCity}  onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+                                placeholder="선택해주세요"/>
+                              <Calendar value={date} className='w-28' onChange={(e) => setDate(e.value)} showIcon /> 
+                              <span className='p-1'> - </span>
+                              <Calendar value={date} className='w-28' onChange={(e) => setDate(e.value)} showIcon /> 
+                           </div>
+                           <div className="th">주문번호</div>
+                           <div className="td  merge-3">
+                              <IconField iconPosition="right">
+                                   <InputIcon className="pi pi-search"> </InputIcon>
+                                   <InputText placeholder="입력해주세요" />
+                               </IconField>                            
+                           </div>
+                         </div>
+
+                       </div>
+                     </div>
+
+              </div>
+              <div className="flex search-btn-wrap">
+                <Button label="검색" text  className="search-btn"/>
+              </div>
+            </div>
+
+
+             {/* 공통 : 검색영역1  */}
+              <p> -  응용2 : 건설현장관리 - 건설현장등록 </p>
+            <div className="hugreen_searchwrap" >
+              <div className="flex w-[95%]">
+
+                 <div className="flex w-full">
+                       <div className="grid-searchwrap grid-searchwrap--6col">
+                       
+                         <div className="row">
+                           <div className="th"> <label for="firstname5">조회조건</label></div>
+                           <div className="td gap-2">
+                              <div className="flex align-items-center">
+                              <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
+                              <label htmlFor="ingredient1">담당자</label>
+                              </div>
+                              <div className="flex align-items-center">
+                                <RadioButton inputId="ingredient2" name="pizza" value="Mushroom" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Mushroom'} />
+                                <label htmlFor="ingredient2">전체</label>
+                              </div>
+                           </div>
+                           <div className="th">건설사</div>
+                           <div className="td gap-2 merge-3 w-full flex md:flex-nowrap">
+                              <InputText value={value} className="w-48" onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>
+                              <Button label="검색" className='in' outlined />
+                                <Dropdown value={selectedCity} className='w-full' onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+                                  placeholder="선택해주세요"/>                       
+                           </div>
+                         </div>
+
+                         <div className="row">
+                           <div className="th"> <label for="firstname5">팀</label></div>
+                           <div className="td">
+                            <Dropdown value={selectedCity}  onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+                                placeholder="선택해주세요"/>
+                           </div>
+                           <div className="th">종결</div>
+                           <div className="td ">
+                             <Dropdown value={selectedCity}  onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+                                placeholder="선택해주세요"/>                           
+                           </div>
+                           <div className="th">사용자</div>
+                           <div className="td ">
+                              김건설                         
+                           </div>
+                         </div>
+
+
+                       </div>
+                     </div>
+
+              </div>
+              <div className="flex search-btn-wrap">
+                <Button label="검색" text  className="search-btn"/>
+              </div>
+            </div>
+
+
+            {/* 공통 : 검색영역1  */}
+            <p> - 응용3 : 현황관리 - 특판현장별 수불부 </p>
+            <div className="hugreen_searchwrap" >
+              <div className="flex w-[95%]">
+
+                 <div className="flex w-full">
+                       <div className="grid-searchwrap grid-searchwrap--8col">
+                       
+                         <div className="row">
+                           <div className="th"> <label for="firstname5">조회년월</label></div>
+                           <div className="td">
+                             <Calendar value={date} onChange={(e) => setDate(e.value)} showIcon />  
+                           </div>
+                           <div className="th">건설현장명</div>
+                           <div className="td gap-2  merge-3 w-full flex md:flex-nowrap">
+                              <InputText value={value} className="w-38" onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>
+                                <Button label="검색" className='in' outlined />
+                              <Dropdown value={selectedCity} className='w-full' onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+                                placeholder="선택해주세요"/>                            
+                           </div>
+                           <div className="th"> <label for="firstname5">팀명</label></div>
+                           <div className="td gap-2 flex md:flex-nowrap">
+                              <Dropdown value={selectedCity}  className="w-28" onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
+                                placeholder="선택해주세요"/>
+                              <div className="flex align-items-center">
+                                <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
+                                <label htmlFor="ingredient1">부가세포함</label>
+                              </div>
+                                   
+                           </div>
+                         </div>
+
+                       </div>
+                     </div>
+
+              </div>
+              <div className="flex search-btn-wrap">
+                <Button label="검색" text  className="search-btn"/>
+              </div>
+            </div>
 
 
 
