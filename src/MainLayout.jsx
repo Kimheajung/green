@@ -137,6 +137,8 @@ const [activeLeftMenu, setActiveLeftMenu] = useState(null);
         { label: '5. 위아래 레이아웃', icon: '', to: '/layout06' },
         { label: '6. 그리드만 있는 레이아웃', icon: '', to: '/layout08' },
         { label: '7. 공지사항(CRUD) 레이아웃', icon: '', to: '/layout09' },
+        { label: "8. 레이아웃 다중분할", icon: '', to: '/layout10' },
+        { label: "9. 레이아웃 위아래 다중분할", icon: '', to: '/layout11' },
       ],
     }
     // ... 필요 메뉴 그대로 복사

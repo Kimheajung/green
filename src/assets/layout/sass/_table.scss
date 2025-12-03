@@ -6,6 +6,18 @@ $color-th-bg: #F8FAFC;
 $color-td-bg: #fff;
 $font-size-base: 1rem;
 
+// 결과값 영역
+.hugreen_searchwrap_result {
+  width: 100%;
+  font-size: $font-size-base;
+  border: 1px solid $color-border;
+  border-radius: 8px !important;
+  text-align: center !important;
+  padding: 2rem 1rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
 /* 그리드 상세보기 정의 */
 // view style_01
 .dtv-info-grid {
@@ -55,6 +67,16 @@ $font-size-base: 1rem;
         overflow: visible !important;
         text-overflow: initial !important;
         word-break: break-word !important;
+      }
+      .in{
+        //width: 80px !important;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 0 1.5rem !important;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 2.2857rem !important;   
       }
     }
     
@@ -139,7 +161,7 @@ $font-size-base: 1rem;
 
   .row {
     display: grid;
-    grid-template-columns: 8% 20% 8% 20%;
+    grid-template-columns: 10% 20% 10% 20%;
     border-bottom: 0px solid $color-border;
 
     > div {
@@ -261,11 +283,59 @@ $font-size-base: 1rem;
     grid-template-columns: 15% 85%;
   }
 }
+.dtv-info-grid--2col-etc2 {
+  .row {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+.dtv-info-grid--2col-etc {
+  .row {
+    grid-template-columns: 20% 80%;
+  }
+}
+.dtv-info-grid--2col-etc3 {
+  .row {
+    grid-template-columns: 30% 70%;
+  }
+}
 
 // ② 4컬럼 구조 (th,td,th,td)
 .dtv-info-grid--4col{
   .row {
-    grid-template-columns: 15% 35% 15% 35%;
+    grid-template-columns: 8% 12% 8% 12% 8% 12% 8% 12% ;
+  }
+}
+
+.dtv-info-grid--4col-view{
+  .row {
+    grid-template-columns: 10% 40% 10% 40%;
+  }
+}
+
+.dtv-info-grid--4col-etc{
+  .row {
+    grid-template-columns: 20% 30% 20% 30%;
+  }
+}
+
+.dtv-info-grid--4col-etc2{
+  .row {
+    grid-template-columns: 8% 52% 8% 32%;
+  }
+}
+
+// ② 4컬럼 구조 (th,td,th,td)
+.dtv-info-grid--5col{
+  .row {
+    grid-template-columns: 8% 12% 8% 12% 8% 12% 8% 12% 8% 12% ;
+  }
+}
+
+// ② 4컬럼 구조 (th,td,th,td)
+.dtv-info-grid--15col{
+  .row {
+    grid-template-columns: 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35% 15% 35%;
   }
 }
 
@@ -287,14 +357,14 @@ $font-size-base: 1rem;
 // ② 4컬럼 구조 (th,td,th,td)
 .grid-searchwrap--2col {
   .row {
-    grid-template-columns: 8% 92%;
+    grid-template-columns: 10% 90%;
   }
 }
 
 // ② 4컬럼 구조 (th,td,th,td)
-.grid-searchwrap-4col {
+.grid-searchwrap--4col {
   .row {
-    grid-template-columns: 8% 20% 8% 20%;
+    grid-template-columns: 10% 20% 10% 20%;
   }
 }
 

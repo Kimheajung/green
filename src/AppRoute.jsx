@@ -30,7 +30,30 @@ import Layout08 from './page/example/layout08.jsx';
 import Layout09 from './page/example/layout09.jsx';
 import Layout09write from './page/example/layout09write.jsx';
 import Layout09view from './page/example/layout09view.jsx';
+import Layout10 from './page/example/layout10.jsx';
+import Layout11 from './page/example/layout11.jsx';
+
 import Page01 from './page/example/page01.jsx';
+import Page02 from './page/example/page02.jsx';
+import Page03 from './page/example/page03.jsx';
+import Page04 from './page/example/page04.jsx';
+import Page05 from './page/example/page05.jsx';
+import Page06 from './page/example/page06.jsx';
+import Page07 from './page/example/page07.jsx';
+import Page08 from './page/example/page08.jsx';
+import Page09 from './page/example/page09.jsx';
+import Page10 from './page/example/page10.jsx';
+import Page11 from './page/example/page11.jsx';
+import Page12 from './page/example/page12.jsx';
+import Page13 from './page/example/page13.jsx';
+import Page14 from './page/example/page14.jsx';
+import Page15 from './page/example/page15.jsx';
+import Page16 from './page/example/page16.jsx';
+import Page17 from './page/example/page17.jsx';
+import Page18 from './page/example/page18.jsx';
+import Page19 from './page/example/page19.jsx';
+import Page20 from './page/example/page20.jsx';
+
 // 임시 Forbidden. 추후 인증 로직 추가 가능.
 function Forbidden({ component }) {
   // 조건이 false면 로그인으로 보내는 식으로 확장
@@ -59,6 +82,234 @@ export default function AppRoute() {
             component={
               <MainLayout>
                 <Page01 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page02"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page02 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page03"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page03 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page04"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page04 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page05"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page05 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page06"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page06 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page07"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page07 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page08"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page08 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page09"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page09 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page10"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page10 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page11"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page11 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page12"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page12 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page13"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page13 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page14"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page14 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page15"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page15 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page16"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page16 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page17"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page17 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page18"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page18 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page19"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page19 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page20"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page20 />
               </MainLayout>
             }
           />
@@ -361,6 +612,30 @@ export default function AppRoute() {
             component={
               <MainLayout>
                 <Layout09view />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/layout10"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Layout10 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/layout11"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Layout11 />
               </MainLayout>
             }
           />

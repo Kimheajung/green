@@ -57,8 +57,20 @@ const Layout07 = () => {
   ];
 
  const tableData = [
+
+      // 업데이트 공유내용
+    { group: "업데이트 공유내용", title: "1.컴포넌트 > 검색유형 추가", link: "", desc: "", status: "업로드완료", date: "25.11.28" },
+    { group: "업데이트 공유내용", title: "2.TOP GnB 업데이트(설정은 미완료)", link: "", desc: "", status: "업로드완료", date: "25.11.28" },
+    { group: "업데이트 공유내용", title: "3.공지사항 CRUD화면 추가", link: "", desc: "/layout09", status: "업로드완료", date: "25.11.28" },
+    { group: "업데이트 공유내용", title: "4.업무매뉴얼 가이드(입력모달 포함)", link: "/layout01", desc: "", status: "업로드완료", date: "25.11.28" },
+    { group: "업데이트 공유내용", title: "5.메뉴타이틀 + 새창+즐겨찾기 아이콘", link: "/layout01", desc: "", status: "업로드완료", date: "25.11.28" },
+    { group: "업데이트 공유내용", title: "6.컴포넌트에 공통 아이디찾기, 우편번호찾기등 모달 추가", link: " ", desc: "", status: "업로드완료", date: "25.12.02" },
+    { group: "업데이트 공유내용", title: "7.건자재PC 업무화면은 기존화면과 검토필요", link: " ", desc: "", status: "업로드완료", date: "25.12.02" },
+    { group: "업데이트 공유내용", title: "8.시스템 업무화면은 기존화면과 검토필요-기존과 다르게 모달팝업유형추가! 때에 따라 사용", link: " ", desc: "", status: "업로드완료", date: "25.12.02" },
+
+
     // 공통업무화면
-    { group: "공통업무화면", title: "1.데시보드", link: "/example02", desc: "", status: "작업중", date: "25.11.18" },
+    { group: "공통업무화면", title: "1.데시보드", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
     { group: "공통업무화면", title: "2.기준-레이아웃", link: "/layout01", desc: "", status: "작업완료", date: "25.11.18" },
     { group: "공통업무화면", title: "3.로그인", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
     { group: "공통업무화면", title: "4.데시보드", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
@@ -105,38 +117,56 @@ const Layout07 = () => {
     { group: "라벨발행", title: "12.프로그램설정", link: "/layout06", status: "작업전", date: "25.11.18" },
 
     // 건자재PC
-    { group: "건자재PC", title: "1.건설현장 > 건설현장정보등록", link: "/example02", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "2.코드관리 > 속성마스터", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "2.코드관리 > 계층정보", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "2.코드관리 > 금형마스터", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "2.코드관리 > 제품코드생성(프로파일)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "2.코드관리 > 제품코드생성(부자재)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "3.자가생산관리 > 생산접수(B)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "3.자가생산관리 > 현황등록(B)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "3.자가생산관리 > 생산현황(B)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "3.자가생산관리 > 현황등록", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "4.비용관리 > 회계전표등록(이하동일 - 입력양식)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "5.현황관리 > 현장별 정산서(?)", link: "/layout01", desc: "", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "6.BM > 채권채무조회서", link: "/layout01", desc: "HTML-출력", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "6.BM > 납품서발행-거래명세서", link: "/layout01", desc: "HTML-출력", status: "작업전", date: "25.11.18" },
-    { group: "건자재PC", title: "6.PM > 기성실적증명서", link: "/layout01", desc: " HTML-출력-신규 ", status: "작업전", date: "25.11.18" },
+    { group: "건자재PC", title: "1.건설현장 > 현장정보등록", link: "/Page01", desc: "", status: "작업중", date: "25.12.01" },
+    { group: "건자재PC", title: "1.건설현장 > 기타견적업로드", link: "/Page02", desc: "", status: "작업완료", date: "25.12.01" },
+    { group: "건자재PC", title: "2.코드관리 > 속성마스터", link: "/Page03", desc: "", status: "작업완료", date: "25.12.01" },
+    { group: "건자재PC", title: "2.코드관리 > 계층정보", link: "/Page04", desc: "", status: "작업완료", date: "25.12.01" },
+    { group: "건자재PC", title: "2.코드관리 > 금형마스터", link: "/Page05", desc: "", status: "작업중", date: "25.12.01" },
+    { group: "건자재PC", title: "2.코드관리 > 제품코드생성(프로파일)", link: "/Page06", desc: "", status: "작업중", date: "25.12.02" },
+    { group: "건자재PC", title: "2.코드관리 > 제품코드생성(부자재)", link: "/Page07", desc: "", status: "작업중", date: "25.12.02" },
+
+    { group: "건자재PC", title: "3.자가생산관리 > 생산접수(B)", link: "/Page08", desc: "", status: "작업중", date: "25.12.02" },
+    { group: "건자재PC", title: "3.자가생산관리 > 현황등록(B)", link: "/Page09", desc: "", status: "작업중", date: "25.12.02" },
+    { group: "건자재PC", title: "3.자가생산관리 > 생산현황(B)", link: "/Page10", desc: "", status: "작업중", date: "25.12.02" },
+    { group: "건자재PC", title: "3.자가생산관리 > 현황등록", link: "/Page11", desc: "", status: "작업중", date: "25.12.02" },
+
+    { group: "건자재PC", title: "4.비용관리 > 회계전표등록(이하동일 - 입력양식)", link: "/Page12", desc: "", status: "작업중", date: "25.12.02" },
+
+    { group: "건자재PC", title: "5.시스템관리 > 절단길이등록", link: "/Page13", desc: "", status: "작업중", date: "25.12.03" },
+    { group: "건자재PC", title: "5.시스템관리 > 사용자조회(등록, 상세화면 모달타입으로 구현)", link: "/Page14", desc: "", status: "작업중", date: "25.12.03" },
+    { group: "건자재PC", title: "5.시스템관리 > 업체조회", link: "/Page15", desc: "", status: "작업중", date: "25.12.03" },
+
+    
+    { group: "건자재PC", title: "6.주문관리 > 주문입력", link: "/Page16", desc: "", status: "작업중", date: "25.12.03" },
+    { group: "건자재PC", title: "6.주문관리 > 주문접수현황", link: "/Page17", desc: "", status: "작업중", date: "25.12.03" },
+    { group: "건자재PC", title: "6.주문관리 > DC현황조회", link: "/Page18", desc: "", status: "작업중", date: "25.12.03" },
+
+    
+    { group: "건자재PC", title: "7.여신관리 > 여신정보조회", link: "/Page19", desc: "", status: "작업중", date: "25.12.03" },
+
+    
+    { group: "건자재PC", title: "8.재고관리 > 기초재고등록", link: "/Page20", desc: "", status: "작업중", date: "25.12.03" },
   ];
 
   const getStatusClass = (status) => {
     switch (status) {
       case "작업중":
-        return "text-orange-300";   
+        return "blue";   
       case "작업완료":
-        return "text-blue-600";    
+        return "text-red-400";    
       case "작업전":
-        return "text-gray-400";     
+        return "text-gray-400 line-through";       
+      case "업로드완료":
+        return "#008000";       
       default:
         return "text-black-600 ";
     }
   };
 
+  
+
   // 메뉴 필터링 상태
-  const [selectedMenu, setSelectedMenu] = useState("전체");
+  const [selectedMenu, setSelectedMenu] = useState("건자재PC");
 
   const menuList = ["전체", "공통업무화면", "PDA", "라벨발행", "건자재PC"];
 

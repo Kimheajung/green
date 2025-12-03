@@ -206,7 +206,7 @@ ol, ul {padding-left: 0rem !important;}
 
 .user-dialog {
   width: 30vw;
-  max-width: 800px;
+  //max-width: 800px;
   min-width: 500px;
 
   @media (max-width: 768px) {
@@ -298,6 +298,38 @@ ol, ul {padding-left: 0rem !important;}
 }
 
 
+.hugreen-tabview {
+  width: 100%  !important;
+
+  .p-tabview-nav {
+    padding-bottom: 0;
+    border-bottom: 0px solid transparent !important;
+  }
+
+  .p-tabview-nav-link {
+    background: transparent;    
+    border: 1px solid #d7d7d7;
+    font-size: 14px;
+    padding: 0.75rem 1.25rem;
+    margin-right:-1px !important;
+    color: #777;
+    font-weight: 500;
+    border-radius: 0px !important;
+
+    &:hover {
+      color: #000;
+    }
+  } 
+}
+  .p-tabview .p-tabview-panels {padding: 0px !important;}
+ /* 선택 탭 */
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #2b579a !important;
+    color: #fff !important;
+    font-weight: 600;
+  }
+
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ag그리드 스타일 재정의 */
 .ag-header{
@@ -364,6 +396,14 @@ ol, ul {padding-left: 0rem !important;}
   height: calc(100vh - 11rem) !important;
 }
 
+.height-04{
+  height: calc(100vh - 14rem) !important;
+  background-color: green !important;
+}
+
+.height-full{
+  height: calc(100vh - 8rem) !important;
+}
 
 
 @media (max-width: 991px) {
