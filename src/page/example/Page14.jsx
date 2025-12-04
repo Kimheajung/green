@@ -297,7 +297,7 @@ const Page14 = () => {
                 visible={visible3}
                 modal={false}
                 resizable={false}
-                style={{ width: '60vw' }}
+                style={{ width: '55vw' }}
                 className="user-dialog"
                 onHide={() => setVisible3(false)}
                 footer={footerContent}
