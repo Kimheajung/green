@@ -223,7 +223,7 @@ const Example04 = () => {
                          <div className="row" >
                            <div className="th"> <label for="firstname5">오더일자1</label></div>
                             <div className="td">
-                              <InputText value={value}  onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>                 
+                              <InputText value={value} className='w-full'  onChange={(e) => setValue(e.target.value)}  placeholder="선택해주세요"/>                 
                            </div>
                            <div className="th merge-2">
                              <div className="flex flex-wrap items-center gap-2">    
@@ -578,14 +578,13 @@ const Example04 = () => {
                                   placeholder="선택해주세요"/>                             
                            </div>
                            <div className="th"> <label for="firstname5">팀명</label></div>
-                           <div className="td gap-2 flex md:flex-nowrap">
+                           <div className="td gap-2 flex ">
                               <Dropdown value={selectedCity}  className="w-28" onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
                                 placeholder="선택해주세요"/>
-                              <div className="flex align-items-center">
+                              <div className="flex flex-wrap align-items-center">
                                 <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
                                 <label htmlFor="ingredient1">부가세포함</label>
-                              </div>
-                                   
+                              </div>                                   
                            </div>
                          </div>
 

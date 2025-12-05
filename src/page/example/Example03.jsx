@@ -131,7 +131,7 @@ const Example03 = () => {
         {/* 공통 : 타이틀영역 */}
             {/* 테이블 형태 */}
             <div className="flex w-full">
-             <div className="dtv-info-grid dtv-info-grid--4col">
+             <div className="dtv-info-grid dtv-info-grid--4col-view">
                 <div className="row">
                   <div className="th required">등록일</div>
                   <div className="td">

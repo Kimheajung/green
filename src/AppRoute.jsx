@@ -48,6 +48,9 @@ import Page12 from './page/example/page12.jsx';
 import Page13 from './page/example/page13.jsx';
 import Page14 from './page/example/page14.jsx';
 import Page15 from './page/example/page15.jsx';
+import Page1501 from './page/example/page1501.jsx';
+import Page1502 from './page/example/page1502.jsx';
+import Page1503 from './page/example/page1503.jsx';
 import Page16 from './page/example/page16.jsx';
 import Page17 from './page/example/page17.jsx';
 import Page18 from './page/example/page18.jsx';
@@ -250,6 +253,42 @@ export default function AppRoute() {
             component={
               <MainLayout>
                 <Page15 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page1501"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page1501 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page1502"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page1502 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page1503"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page1503 />
               </MainLayout>
             }
           />

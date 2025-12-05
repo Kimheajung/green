@@ -131,6 +131,9 @@ const Layout07 = () => {
     { group: "건자재PC", title: "5.시스템관리 > 절단길이등록", link: "/Page13", desc: "", status: "작업완료", date: "25.12.03" },
     { group: "건자재PC", title: "5.시스템관리 > 사용자조회(등록, 상세화면 모달타입으로 구현)", link: "/Page14", desc: "", status: "작업완료", date: "25.12.03" },
     { group: "건자재PC", title: "5.시스템관리 > 업체조회", link: "/Page15", desc: "", status: "작업완료", date: "25.12.03" },
+    { group: "건자재PC", title: "5.시스템관리 > 공통코드조회", link: "/Page1501", desc: "", status: "작업완료", date: "25.12.03" },
+    { group: "건자재PC", title: "5.시스템관리 > 휴일관리", link: "/Page1502", desc: "", status: "작업중", date: "25.12.03" },
+    { group: "건자재PC", title: "5.시스템관리 > 주문관리", link: "/Page1503", desc: "", status: "작업중", date: "25.12.03" },
 
     
     { group: "건자재PC", title: "6.주문관리 > 주문입력", link: "/Page16", desc: "", status: "작업완료", date: "25.12.03" },
