@@ -237,14 +237,84 @@ const handleCloseMenu = () => setMegaMenuVisible(false);
                     <i className="pi pi-ellipsis-v" />
                 </button>
 
-                {/* 모바일 : 오른쪽영역설정 */}
-                <Sidebar
-                      visible={mobileMenuVisible}
-                      position="right"
-                      onHide={() => setMobileMenuVisible(false)}
-                      className="mobile-topbar-sidebar lg:hidden">
-                      <h3 className="mb-3 font-bold text-xl">모바일 환경설정 메뉴</h3>
-                  </Sidebar>
+               
+                 {/* 모바일 : 오른쪽영역설정 */}
+        <Sidebar
+              visible={mobileMenuVisible}
+              position="right"
+              onHide={() => setMobileMenuVisible(false)}
+              className="mobile-topbar-sidebar lg:hidden">
+
+    <div className="mypage" >
+
+      {/* 뒤로가기 + 제목 */}
+      <div className="mypage-header">
+        <Button
+          type="button"
+          className="mypage-header__back"
+          icon="pi pi-chevron-left"
+          rounded
+          text
+          onClick={() => navigate(-1)}  
+        />
+        <span className="mypage-header__title">마이페이지</span>
+      </div>
+
+      <main className="mypage-body">
+        {/* 프로필 카드 */}
+        <section className="mypage-profile">
+          <div className="mypage-profile__left gap-4">
+            <Avatar
+              label=""
+              icon="pi pi-user"
+              className="mypage-profile__avatar"
+              shape="circle"
+            />
+            <div className="mypage-profile__info">
+              <div className="mypage-profile__row">
+                <Tag
+                  value="대리점"
+                  className="mypage-profile__role"
+                  rounded />
+                <span className="mypage-profile__name">이가명님</span>
+                <i className="pi pi-chevron-right mypage-profile__arrow" />
+              </div>
+              <p className="mypage-profile__company">(주) 금호석유화학</p>
+            </div>
+          </div>
+          <Button
+            label="Logout"
+            className="mypage-profile__logout p-button-sm" />
+        </section>
+
+        {/* 회원정보 링크 */}
+        <Button
+          type="button"
+          className="mypage-linkrow p-button-text" 
+          label="회원정보 및 비밀번호 변경"
+          icon="pi pi-chevron-right"
+          iconPos="right"
+        />
+
+        {/* 메뉴 리스트 */}
+        <section className="mypage-menu">
+          {menuItems.map((item) => (
+            <button
+              key={item.label}
+              className="mypage-menu__item"
+              type="button"
+            >
+              <span className="mypage-menu__label">{item.label}</span>
+              {item.hasToggle && (
+                <i className="pi pi-chevron-right mypage-menu__icon" />
+              )}
+            </button>
+          ))}
+        </section>
+      </main>
+    </div>
+
+          </Sidebar>
 
 
                 {/* PC- 아이콘영역  */}

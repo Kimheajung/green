@@ -388,3 +388,231 @@
         display: none;
     }
 }
+
+
+// 모바일 호나경설정 영역
+
+.mypage {
+  position: absolute;
+  margin-top: -20px;
+  width: 72vw;
+
+
+/* 상단 타이틀 바 */
+.mypage-topbar {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+
+  background-color: #222;
+  color: #fff;
+
+  &__iconbtn {
+    border: none;
+    background: transparent;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__spacer {
+    width: 24px;
+  }
+}
+
+/* 마이페이지 헤더 */
+.mypage-header {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0;
+
+  &__back {
+    border: none;
+    background: transparent;
+    margin-right: 4px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.mypage-body {
+  padding: 1rem 0;
+}
+
+/* 프로필 카드 */
+.mypage-profile {
+  padding: 1rem 0;
+  border-bottom:1px solid #ddd;
+  
+  flex-direction: row;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  &__avatar {
+    background-color: #f6f6f6;
+    width: 60px !important;
+    height: 60px !important;
+    i {
+      font-size: 18px;
+      color: #b0b0b0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    margin-bottom: 2px;
+  }
+
+  &__role {
+    margin-right: 6px;
+    background-color: #e5ecff;
+    color: #5272c7;
+    border-radius: 999px;
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+
+  &__arrow {
+    font-size: 12px;
+    color: #c0c0c0;
+  }
+
+  &__company {
+    font-size: 12px;
+    color: #888;
+    margin-top:10px;
+  }
+
+  &__logout {
+    margin-top: 2rem;
+    &.p-button {
+      background: #222;
+      border: none;
+      width: 100%;
+      font-size: 12px;
+    }
+  }
+}
+
+/* 회원정보 링크 row */
+.mypage-linkrow {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 16px;
+
+  background-color: #ffffff !important;
+  border-radius: 8px;
+  border: none !important;
+  box-shadow: none !important;
+
+  display: flex !important;
+  align-items: center;
+  text-align: left;
+
+  .p-button-label {
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 600;
+  }
+
+  .p-button-icon {
+    font-size: 12px;
+    color: #b0b0b0;
+  }
+
+  &:hover {
+    background: #f7f7f7 !important;
+  }
+}
+
+
+/* 메뉴 리스트 */
+.mypage-menu {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__item {
+    width: 100%;
+    padding: 13px 16px;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  &__icon {
+    font-size: 12px;
+    color: #b0b0b0;
+  }
+}
+}
+
+
+/* 모바일에서 살짝 여백 조정 */
+@media (min-width: 480px) {
+  .mypage-body {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
