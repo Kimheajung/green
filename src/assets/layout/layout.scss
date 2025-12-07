@@ -420,11 +420,19 @@ ol, ul {padding-left: 0rem !important;}
   margin-top: 56px !important; 
   height: calc(100% - 56px) !important; 
 }
+
 /* 즐겨찾기 전용 Sidebar -> full height */
-.favorite-sidebar, .mobile-topbar-sidebar {
+.favorite-sidebar {
   margin-top: -56px !important;               
   height:  calc(100% + 56px) !important;              
-  top: 0 !important;                       
+  top: 0 !important;
+}
+
+.mobile-topbar-sidebar {
+  margin-top: -56px !important;               
+  height:  calc(100% + 56px) !important;              
+  top: 0 !important;  
+  width: 80vw !important;
 }
 
 .favorite-help-sidebar {
