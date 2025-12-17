@@ -325,14 +325,19 @@
 
 
 
-@media (max-width: 991px) {    
-    .search-btn-wrap {width: 100% !important;margin-top:1rem;}
+@media (max-width: 921px) {    
+    .search-btn-wrap {
+      width: 100% !important; 
+      margin-top:1rem;
+    }
     .search-btn {
         width: 100% !important;
         background-color: #00485D !important;
         color: #fff !important;
     }
 } 
+
+
 
 
 

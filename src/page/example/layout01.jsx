@@ -289,7 +289,7 @@ const Layout01 = () => {
              {/* 공통 검색영역(PC+모바일대응) */}
             <div className="hugreen_grid flex-1 flex flex-wrap">
               {/* PC (md 이상) */}
-              <div className="hugreen_searchwrap hidden md:flex transition-all duration-300">
+              <div className="hugreen_searchwrap hidden lg:flex transition-all duration-300">
                 <div className="flex">
                   <SearchForm value={value} setValue={setValue} selectedCity={selectedCity} setSelectedCity={setSelectedCity} cities={cities} />
                 </div>
@@ -299,7 +299,7 @@ const Layout01 = () => {
               </div>
 
               {/* 모바일 (sm 이하) */}
-              <div className="w-full md:hidden">
+              <div className="w-full lg:hidden">
                 <div className="hugreen_searchwrap overflow-hidden">
                   {/* Accordion Header */}
                   <button
