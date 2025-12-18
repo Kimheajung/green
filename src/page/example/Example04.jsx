@@ -566,10 +566,7 @@ const Example04 = () => {
                        <div className="grid-searchwrap grid-searchwrap--8col">
                        
                          <div className="row">
-                           <div className="th"> <label for="firstname5">조회년월</label></div>
-                           <div className="td">
-                             <Calendar value={date} onChange={(e) => setDate(e.value)} showIcon />  
-                           </div>
+                          
                            <div className="th">건설현장명</div>
                            <div className="td gap-2  merge-3 w-full flex md:flex-nowrap">
                              <InputText value={value} className="w-28" onChange={(e) => setValue(e.target.value)}  placeholder=""/>
@@ -577,11 +574,15 @@ const Example04 = () => {
                                 <Dropdown value={selectedCity} className='w-60' onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
                                   placeholder="선택해주세요"/>                             
                            </div>
+                            <div className="th"> <label for="firstname5">조회년월</label></div>
+                           <div className="td">
+                             <Calendar value={date} onChange={(e) => setDate(e.value)} showIcon />  
+                           </div>
                            <div className="th"> <label for="firstname5">팀명</label></div>
-                           <div className="td gap-2 flex ">
+                           <div className="td  gap-2 flex" >
                               <Dropdown value={selectedCity}  className="w-28" onChange={(e) => setSelectedCity(e.value)} options={cities} optionLabel="name" 
                                 placeholder="선택해주세요"/>
-                              <div className="flex flex-wrap align-items-center">
+                              <div className="flex  align-items-center">
                                 <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
                                 <label htmlFor="ingredient1">부가세포함</label>
                               </div>                                   

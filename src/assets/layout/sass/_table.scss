@@ -442,8 +442,9 @@ $font-size-base: 1rem;
 
   .grid-searchwrap--8col .row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    /* th(1) + td(1) | th(1) + td(1) */
+   // grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: 120px 1fr 120px 1fr;
+    background-color: blue;
     column-gap: 12px;
     row-gap: 8px;
   }
