@@ -104,7 +104,7 @@ const Page01 = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1280) {
         setLayout('vertical');  // 모바일: 위아래
       } else {
         setLayout('horizontal'); // PC: 좌우
@@ -245,7 +245,7 @@ const Page01 = () => {
             {/* 공통 검색영역(PC+모바일대응) */}
             <div className="hugreen_grid flex-1 flex flex-wrap">
               {/* PC (md 이상) */}
-              <div className="hugreen_searchwrap hidden md:flex transition-all duration-300">
+              <div className="hugreen_searchwrap hidden lg:flex transition-all duration-300">
                 <div className="flex w-[95%]">
                   <SearchForm value={value} setValue={setValue} selectedCity={selectedCity} setSelectedCity={setSelectedCity} cities={cities} />
                 </div>
@@ -255,7 +255,7 @@ const Page01 = () => {
               </div>
 
               {/* 모바일 (sm 이하) */}
-              <div className="w-full md:hidden">
+              <div className="w-full lg:hidden">
                 <div className="hugreen_searchwrap overflow-hidden">
                   {/* Accordion Header */}
                    <button
