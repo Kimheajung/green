@@ -355,6 +355,32 @@ a, button {
   //color: blue !important;
 }
 
+/* 일요일 */
+.dashboard .dashboard-calendar  .p-datepicker
+  table  tbody  td:first-child  > span {
+  color: #e53935; 
+}
+
+/* 토요일 */
+.dashboard .dashboard-calendar  .p-datepicker
+  table  tbody  td:last-child  > span {
+  color: #1e88e5; 
+}
+
+//공지사항 뉴표시
+.notice-new {
+  font-size: 8px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #ef4444; 
+  padding: 2px 6px;
+  border-radius: 40px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+
+
 .cal-summary {
   margin-bottom: 10px;
   //height: 48px;  

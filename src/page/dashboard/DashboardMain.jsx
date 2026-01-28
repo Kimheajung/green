@@ -13,7 +13,7 @@ const DashboardMain = (props) => {
 const [noCreditMode, setNoCreditMode] = useState(false); 
 
 const notices = [
-  { title: "전략기획팀 1월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15" },
+  { title: "전략기획팀 1월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15", isNew: true },
   { title: "설 연휴 배송 일정 안내", date: "2026-01-10" },
   { title: "전략기획팀 1월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15" },
   { title: "설 연휴 배송 일정 안내", date: "2026-01-10" },
@@ -22,7 +22,7 @@ const notices = [
 
 // max5개
 const files = [
-  { title: "납세_롤러_스토퍼_경향하우징_LX하우시스(26년 1월)가이드 배포", date: "2026-01-15" },
+  { title: "납세_롤러_스토퍼_경향하우징_LX하우시스(26년 1월)가이드 배포", date: "2026-01-15", isNew: true },
   { title: "여신 약정서.hwp", date: "2026-01-15" },
   { title: "납세_롤러_스토퍼_경향하우징_LX하우시스(26년 1월)가이드 배포", date: "2026-01-15" },
   { title: "여신 약정서.hwp", date: "2026-01-15" },
@@ -36,7 +36,7 @@ const data = {
   datasets: [
     {
       data: [salesRate, 100 - salesRate],
-      backgroundColor: ["#4caf50", "#e0e0e0"],
+      backgroundColor: ["#6AB7C4", "#e0e0e0"],
       borderWidth: 0,
     },
   ],
@@ -158,30 +158,6 @@ const [chartOptions, setChartOptions] = useState({});
     desc: "PBF-84EWIA/AB 외 3건 주문",
     orderNo: "PB00009890"
   },
-  {
-    id: 5,
-    status: "승인대기",
-    tagClass: "main02",
-    company: "금호석유화학(주)",
-    desc: "PBF-84EWIA/AB 외 3건 주문",
-    orderNo: "PB00009890"
-  },
-  {
-    id: 6,
-    status: "승인대기",
-    tagClass: "main02",
-    company: "금호석유화학(주)",
-    desc: "PBF-84EWIA/AB 외 3건 주문",
-    orderNo: "PB00009890"
-  },
-  {
-    id: 7,
-    status: "승인대기",
-    tagClass: "main02",
-    company: "금호석유화학(주)",
-    desc: "PBF-84EWIA/AB 외 3건 주문",
-    orderNo: "PB00009890"
-  },
 ];
 
 
@@ -227,13 +203,13 @@ const [chartOptions, setChartOptions] = useState({});
     <div className="item">
        <div className="flex justify-between mb-2">
         <h3>매출현황</h3>
-        <Button icon="pi pi-plus" className="w-1" rounded text severity="secondary" aria-label="더보기"/>
+        <Button icon="pi pi-plus" className="w-[10px]" rounded text severity="secondary" aria-label="더보기"/>
        </div>
 
         <div className="flex flex-col md:flex-row gap-4">
           <div  className="flex flex-1 relative items-center gap-2">
             {/* 왼쪽: 반원 도넛 */}
-            <div className="sales-half-donut shrink-0" >
+            <div className="sales-half-donut shrink-0">
               <Chart type="doughnut" data={data} options={options} />
               <div className="sales-half-donut__center">
                 <strong>{salesRate}%</strong>
@@ -265,7 +241,7 @@ const [chartOptions, setChartOptions] = useState({});
             <div className="flex flex-col">
               <span className="tit">당월 매출액 현황</span>
               <p className="value">
-                1,450<span className="text-gray-400">억원</span>
+                212,290<span className="text-gray-400">억원</span>
               </p>
               <span className="plus">
                 지난 달보다 +900억 <span>총 23,000 건</span>
@@ -280,8 +256,8 @@ const [chartOptions, setChartOptions] = useState({});
      {/* 주문 현황 */}
     <div className="item">
       <div className="flex justify-between mb-2">
-        <h3>주문 현황</h3>
-        <Button icon="pi pi-plus" className="w-1" rounded text severity="secondary" aria-label="더보기"/>
+        <h3>주문 처리 현황</h3>
+        <Button icon="pi pi-plus" className="w-[10px]" rounded text severity="secondary" aria-label="더보기"/>
       </div>
       <div className="count pt-2">
         <div className="count-item">
@@ -420,7 +396,7 @@ const [chartOptions, setChartOptions] = useState({});
         {/* 년도별 매출현황 */}
         <div className="card2 graph-item">
             <div className="graph-header">
-              <h4>매출 현황</h4>
+              <h4>년도별 매출현황</h4>
               <Button icon="pi pi-plus" rounded text severity="secondary" />
             </div>
             <div className="graph-chart">
@@ -442,6 +418,9 @@ const [chartOptions, setChartOptions] = useState({});
                 {notices.map((item, idx) => (
                   <li key={idx} onClick={() => navigate("/")} className="cursor-pointer hover:text-blue-800">
                     <span className="nottitle">{item.title}</span>
+                     {item.isNew && (
+                        <span className="notice-new">N</span>
+                      )}
                     <span className="date">{item.date}</span>
                   </li>
                 ))}
