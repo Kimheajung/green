@@ -26,13 +26,22 @@ a:active {
 ol, ul {padding-left: 0rem !important;}
 .row {--bs-gutter-x : 0rem !important}
 
+
+//체크된 체크박스 아이콘 재정의
+.p-checkbox-icon {
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* 휴그린 primreact 기본 컴퍼넌트 재정의 */
 .p-button {
     height: 2.2857rem !important;
     padding: 0.75rem 1rem !important;
     border-radius: 4px !important;
-    //background-color: $color-primary-button;
+    //background-color: $color-primary-button !important;
+    //border: 0px solid transparent !important;
 }
 /* 마우스 클릭 시(active) */
 .p-button:active {
@@ -100,7 +109,9 @@ ol, ul {padding-left: 0rem !important;}
 
 .p-inputtext{
     height: 2.2857rem !important;
-    padding: 0rem 1rem !important;
+    padding: 0rem .5rem !important;
+    //font-size: 12px !important;
+    //letter-spacing: -0.5px !important;
 }
 .p-inputtextarea{
     border: 1px solid #ddd !important;
@@ -109,14 +120,17 @@ ol, ul {padding-left: 0rem !important;}
     background-color: #fff !important;
 }
 
+
+
+
 /* 에디터 전체 영역 */
 .p-editor-container,
 .ql-container {
   width: 100% !important;
 }
 .p-editor-container {
-  width: 100% !important;
-  height: auto !important;     /* td 안에서만 높이 결정됨 */
+  width: 100% !important;  
+  //height: auto !important;     /* td 안에서만 높이 결정됨 */
 }
 .ql-toolbar.ql-snow{
   padding: 4px !important;
@@ -125,10 +139,15 @@ ol, ul {padding-left: 0rem !important;}
   border-top-right-radius: 6px;
 }
 .ql-container.ql-snow {
-    height: 25rem !important;  
+    //height: 25rem !important;  
+    height: calc(100% - 42px) !important;
     border: 1px solid #ccc;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+
+  @media (max-width: 768px) {
+     height: calc(100% - 102px) !important;
+  }
 }
 .ql-editor {
   height: 100% !important;
@@ -157,11 +176,11 @@ ol, ul {padding-left: 0rem !important;}
     color:#fff !important;
   }
 }
-.p-radiobutton .p-radiobutton-box, .p-checkbox .p-checkbox-box  {width: 16px !important;height: 16px !important;}
-.p-radiobutton, .p-checkbox {width: 16px !important; height: 16px !important;}
+.p-radiobutton .p-radiobutton-box, .p-checkbox .p-checkbox-box  {width: 18px !important;height: 18px !important;}
+.p-radiobutton, .p-checkbox {width: 18px !important; height: 18px !important;}
 .p-checkbox .p-checkbox-input {
     border: 0px solid #d1d5db !important;
-    border-radius: 2px !important;
+    border-radius: 4px !important;
 }
 
 .p-dialog {
@@ -219,6 +238,7 @@ ol, ul {padding-left: 0rem !important;}
     padding: 1.2rem;
   }  
 }
+
 
 //아코디언 재정의
 .p-accordion .p-accordion-content {
@@ -297,17 +317,70 @@ ol, ul {padding-left: 0rem !important;}
   }
 }
 
+// + -  인풋 버튼 재정의
+.my-inputnumber {
 
+  .p-inputtext {
+    font-size: 1rem !important;
+    padding: 0 12px;
+    width: 60px;
+    margin: 0 5px !important;
+  }
+
+  .p-inputnumber-button {
+    border-radius: 4px !important;
+    border:none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px !important;
+    background-color: #8d9db5 !important;
+    color: #fff !important;
+    font-size: 10px !important;
+
+    i {
+      font-size: 10px !important;
+    }
+  }
+
+  /* + 버튼 */
+  .p-inputnumber-button-up {
+
+    &:hover {
+      background-color: #333 !important;
+    }
+  }
+
+  /* - 버튼 */
+  .p-inputnumber-button-down {
+
+    &:hover {
+      background-color: #333 !important;
+      border-color: #b91c1c !important;
+    }
+  }
+
+  /* 전체 wrapper */
+  .p-inputnumber {
+    border-radius: 6px !important;
+    overflow: hidden;
+  }
+}
+
+
+//탭뷰
 .hugreen-tabview {
   width: 100%  !important;
+    background: transparent !important;    
 
   .p-tabview-nav {
     padding-bottom: 0;
+    background: transparent !important; 
     border-bottom: 0px solid transparent !important;
   }
 
   .p-tabview-nav-link {
-    background: transparent;    
+    background: transparent !important;    
     border: 1px solid #d7d7d7;
     font-size: 14px;
     padding: 0.75rem 1.25rem;
@@ -329,6 +402,50 @@ ol, ul {padding-left: 0rem !important;}
     font-weight: 600;
   }
 
+  //탭뷰 - 라벨 전용
+.hugreen-tabview-label {
+  width: 100%  !important;   
+
+  .p-tabview-nav {
+    padding-bottom: 0;
+    background: transparent !important; 
+    border-bottom: 0px solid transparent !important;
+  }
+
+  .p-tabview-nav-link {
+    background: transparent !important;    
+    border: 1px solid #E2E8F0;
+    font-size: 14px;
+    padding: 0.75rem 1.25rem;
+    margin-right:-1px !important;
+    color: #777;
+    font-weight: 500;
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+    margin-bottom:-1.1rem !important;
+
+    &:hover {
+      color: #000;
+    }
+  } 
+
+  .p-tabview-panels {
+
+    border:1px solid #E2E8F0;
+    background-color: #F8FAFC;
+    padding: 1rem !important;      
+
+  }
+
+  .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #BCC7D8 !important;
+    color: #1b3f75 !important;
+    font-weight: 600;
+  }
+  
+}
+
+.space {padding: 0 10px !important;}
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ag그리드 스타일 재정의 */
@@ -398,12 +515,22 @@ ol, ul {padding-left: 0rem !important;}
 
 .height-04{
   height: calc(100vh - 14rem) !important;
-  background-color: green !important;
 }
+
+.height-05{
+  height: calc(100vh - 23.6rem) !important;
+}
+
+// 현장정보등록 전용
+.height-06{
+  height: calc(100vh - 29.6rem) !important;
+}
+
 
 .height-full{
   height: calc(100vh - 8rem) !important;
 }
+
 
 
 @media (max-width: 991px) {
@@ -420,7 +547,6 @@ ol, ul {padding-left: 0rem !important;}
   margin-top: 56px !important; 
   height: calc(100% - 56px) !important; 
 }
-
 /* 즐겨찾기 전용 Sidebar -> full height */
 .favorite-sidebar {
   margin-top: -56px !important;               
@@ -434,6 +560,7 @@ ol, ul {padding-left: 0rem !important;}
   top: 0 !important;  
   width: 80vw !important;
 }
+
 
 .favorite-help-sidebar {
   width: 28rem !important;
@@ -457,6 +584,23 @@ ol, ul {padding-left: 0rem !important;}
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     margin: 1rem 0 2rem 0 !important;
   }
+}
+
+//시스템관리 - 휴일관리에서 등록된 휴일 관리
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  padding: 8px 0;
+}
+
+.favorite-item button {
+  cursor: pointer;
+}
+
+.favorite-item .pi-times {
+  font-size: 14px;
 }
 
 
@@ -492,6 +636,9 @@ ol, ul {padding-left: 0rem !important;}
   gap: 4px;
   margin-top: 10px;
 
+  .none{
+    align-items: left;
+  }
   .favorite-item {
     display: flex;
     align-items: center;
@@ -587,6 +734,16 @@ ol, ul {padding-left: 0rem !important;}
 .p-tag.p-tag-secondary{
  background-color: #debbdd !important; //관리자
  color: #aa7ca9 !important;
+}
+
+.p-tag.p-tag-contrast.main01{
+ background-color: #DFE6F9 !important; //메인-주민승인
+ color: #6B8DE0 !important;
+
+}
+.p-tag.p-tag-contrast.main02{
+ background-color: #F9E7DF !important; //메인-승인대기
+ color: #B2978C !important;
 }
 
 /* inputswitch 재정의 */
@@ -759,36 +916,56 @@ ol, ul {padding-left: 0rem !important;}
 }
 
 
-
 //로그인
+
 .login-container {
   width: 100%;
   height: 100vh;
-  background: url("/images/visual_02.jpg") no-repeat top left;
-  background-size: cover;    //★ 핵심: 원본 비율 유지, 잘림 없음
-  background-size: 70% !important;
-  background-color: #fff;  
+  background: url("/images/visual_02.jpg")  top left;
+  //background-size: cover;    
+  background-size: auto 200% !important;
+  background-color: #F8FAFD;  
+
+  /* 배경 애니메이션  */
+  background-repeat: repeat-y; 
+  background-position: 80% 100%;          
+  animation: loginBgMove 8s linear forwards;
 
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-right:40px !important;
 
   align-items: center;
   padding: 1rem !important;
 
   @media (max-width: 768px) {
-  padding: 1rem;
-  background-position: top;
-  background: url("/images/visual_02jpg") no-repeat top left;
-  background-size: cover;  
-  background-size: 100% !important;
+  //padding: 1rem;
+  background: url("/images/visual_02.jpg") no-repeat top left;
+  background-size: contain;  
+  background-size: 100% !important;     
+  animation: none;
+  margin-right:0px !important;
+  justify-content: center;
+  display: flex;
   }
 }
+
+/* 아래 → 위로 천천히 */
+@keyframes loginBgMove {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* 모션 최소화 설정(접근성) */
+@media (prefers-reduced-motion: reduce) {
+  .login-container { animation: none; }
+}
+
 
 .login-box {
   width: 430px;
   background: #fff;
-  padding: 8rem 4rem 10rem 4rem;
+  padding: 8rem 4rem 1rem 4rem;
   border-radius: 12px;
   border:1px solid #D0D0D0 !important;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
@@ -805,13 +982,18 @@ ol, ul {padding-left: 0rem !important;}
 .login-title {
   text-align: left;
   margin-bottom: 4rem !important;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #9FAABA;
+  font-size: 1.2rem;  
+  font-weight: 300;
+  //color: #9FAABA;
+  color: #444;
   
    span {
     display: block;   
     line-height: 1.4;  
+  }
+  span + span {
+    font-size: 2rem !important; 
+    font-weight: 600;
   }
 }
 
@@ -824,13 +1006,14 @@ ol, ul {padding-left: 0rem !important;}
 
   .p-inputtext,
   .p-password {
-    border:1px solid #E2E8F0 !important;
+    //border:1px solid #E2E8F0 !important;
+    //border:1px solid red !important;
     border-radius: 6px !important;
-    width: 316px !important;
+    width: 100% !important;
     height: 40px !important;
 
       @media (max-width: 480px) {
-        width: 256px !important;
+        width: 100% !important;
       }
   }
 }
@@ -869,7 +1052,7 @@ ol, ul {padding-left: 0rem !important;}
     background: none;
     border: none;
     color: #475569;
-    font-size: 0.85rem;
+    font-size: 14px;
     cursor: pointer;
 
     &:hover {
@@ -878,19 +1061,26 @@ ol, ul {padding-left: 0rem !important;}
   }
 }
 
+.p-icon-field-right > .p-input-icon:last-of-type {
+    line-height: 10px !important;
+}
+
+
 .login-sub-bottom {
-  position: absolute;
   display: flex;
   padding-top:8rem;
-  width: 74%;
-  bottom:2rem;
   color: #9FAABA;
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 480px) {
+    padding-top:2rem !important;
+  }
+
   .infotext_left {
     display: flex;
     align-items: start;
+    font-size: 14px !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -898,12 +1088,14 @@ ol, ul {padding-left: 0rem !important;}
    .infotext_right {
     display: flex;
     align-items: end;
+    font-size: 14px !important;
     color: #555 !important;
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
 }
 
 .modal-field {
@@ -913,3 +1105,5 @@ ol, ul {padding-left: 0rem !important;}
     width: 100%;
   }
 }
+
+

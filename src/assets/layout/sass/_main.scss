@@ -25,6 +25,488 @@ a, button {
 }
 
 
+//PC + 모바일 건자재 데시보드
+.dashboard {
+  margin: 0 8rem 0 10rem;
+  padding: 0  0px;
+  //background-color: #4caf50;
+  height: calc(100vh - 120px);
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+   min-height: 0;
+}
+
+.topboard{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 8px 0 ;
+  color: #888;
+}
+.summary {
+  display: grid;
+  min-height: 0;
+  //height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  //margin-bottom: 20px;
+
+  .item {
+    background: #fff;
+    border-radius: 8px;
+    border:1px solid #ddd !important;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .item h3 {
+    font-size: 14px;
+    color: #333;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px !important;
+    }
+    .item .value {
+    font-size: 38px;
+    line-height: 28px;
+    font-weight: 700;
+    }
+    .item .value span {
+    font-size: 16px;
+    margin-left: 4px;
+    }
+     .item .tit {
+    display: block;
+    font-size: 14px;
+    color: #6D7077;
+    }
+    .item .plus {
+    display: block;
+    font-size: 13px;
+    color: #335391;
+    span {
+      color: #C2CACD;
+      display: inline-block;
+      }
+    }  
+    .item .minus {
+    display: block;
+    font-size: 13px;
+    color: #D06981;
+    span {
+      color: #C2CACD;
+      display: inline-block;
+      }
+    }
+    .item ul {
+    padding-left: 16px;
+    font-size: 14px;
+    }
+}
+
+
+
+.sales-half-donut {
+  position: relative;
+  //background-color: blue;
+  width: 80px;
+  margin: 0 auto;
+}
+
+.sales-half-donut canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.sales-half-donut__center {
+  position: absolute;
+  left: 50%;
+  top: 25px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.sales-half-donut__center strong {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sales-donut {
+  position: relative;
+  width: 120px;
+  height: 120px; /* width와 동일 */
+}
+
+.sales-donut canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.sales-donut__center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+
+.count {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.count-item {
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.count-item .label {
+  display: flex;
+  font-size: 14px;
+  color: #666;
+  align-items: center;
+  justify-content: center;
+}
+
+.count-item .num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+
+/* 여신 현황 */
+.credit {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border:1px solid #ddd !important;  
+  background: #fff;
+  border-radius: 8px;
+  align-items: center;
+  min-height: 80px;
+  gap: 16px;
+  padding: 0 20px;
+  margin-top: 16px;;
+
+  h3 {
+    font-size: 1.25rem !important;
+    color: #333;
+    }
+
+  .item {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    }
+    
+    .item span {
+    font-size: 16px;
+    color: #6D7077;
+    line-height: 20px;
+    }
+    .item strong {
+    font-size: 22px;
+    margin-right:8px;
+    color:#333;
+    align-items: end;
+    }
+    .item span.tit {
+    font-size: 16px;
+    align-items: end;
+    line-height: 20px;
+    color: #777;
+    //margin-top:-3px !important;
+    }
+    .item.highlight strong {
+    color: #D06981;
+    }
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  //height: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.notice {
+  flex: 1;          
+  //min-height: 0;    
+  display: grid;
+  //height: 100%;
+  min-height: 0;
+  grid-template-columns: 7fr 3fr;
+  //grid-template-rows: auto auto;
+   grid-template-rows:  auto 1fr; 
+  gap: 16px;
+  margin-top: 16px;
+
+    .item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+
+  display: flex;
+  background-color: lavender;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  
+  .notice-full {
+    grid-column: 2;    
+    grid-row: 1 / -1;   
+  }
+}
+
+
+.graph-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 0;        /* ★ 매우 중요 */
+}
+
+
+
+.graph-header {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.graph-chart {
+   flex: 1; 
+ // position: relative;
+   min-height: 0;
+}
+.card2 {
+  min-width: 0;
+  //height: var(--bs-card-height);
+}
+
+// 차트 높이 재정의 
+.p-chart{
+  height: 100% !important;
+}
+
+//데시보드 전용 달력 재정의
+.dashboard .p-datepicker {
+    border: 0px solid red !important;
+}
+.dashboard .p-datepicker table {
+    text-align: center !important;
+}
+.dashboard  .p-datepicker .p-datepicker-header {
+    padding: 0 0.25rem !important;
+    border-bottom: 0px solid red !important;
+}
+.dashboard .dashboard-calendar .p-calendar {
+  width: 100%;
+}
+
+.dashboard .dashboard-calendar .p-datepicker {
+  border: none;
+  padding: 0;
+}
+.dashboard .p-datepicker table td > span:hover {
+  color: #1d4ed8;
+  background-color: transparent !important;
+}
+/* 오늘 날짜 hover */
+.dashboard .p-datepicker table td.p-datepicker-today > span {
+    background: transparent !important;
+    color: #181d24;
+    font-weight: 600 !important;
+    border-color: transparent;
+}
+
+/* 선택된 날짜 hover */
+.dashboard .p-datepicker table td > span.p-highlight {
+    color: #fff;
+    background: #0e7490;
+    width:  20px !important;
+    height: 20px !important;
+}
+
+/* 셀 크기, 폰트 등 커스터마이징 */
+.dashboard .dashboard-calendar .p-datepicker table td > span {
+  //width: 14px;
+  //background-color: red;
+  height: 16px;
+  font-size: 12px;
+  //color: blue !important;
+}
+
+.cal-summary {
+  margin-bottom: 10px;
+  //height: 48px;  
+  display: grid;
+  grid-template-columns: 64px 20% auto 15%;
+  align-items: center;
+  column-gap: 8px;
+
+  white-space: nowrap; 
+
+}
+.cal-summary > * {
+  min-width: 0;                
+}
+
+.cal-list {
+  max-height: calc(46px * 3);
+  overflow-y: auto;
+  background-color: yellow;
+}
+
+
+.notice-panel {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr; 
+  gap: 12px;
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notice-section h4 {
+  font-size: 1.25rem !important;
+  display: flex;
+  font-weight: 600 !important;
+  align-items: center;
+  margin-bottom:0px !important;
+  justify-content: center;
+  color: #333;
+}
+
+.notice-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notice-section li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 6px 0;
+  //border-bottom: 1px dashed #e0e0e0;
+}
+
+.notice-section li:last-child {
+  border-bottom: none;
+}
+
+.notice-section .nottitle {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notice-section .date {
+  font-size: 13px;
+  color: #999;
+  margin-left: 8px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    min-height: 120px !important;
+  }
+}
+
+//테블릿 - 가로
+@media (max-width: 1366px) {
+  .dashboard {
+    margin: 0 0px 0 2rem;
+  }
+}
+
+
+//테블릿 - 세로
+@media (max-width: 1320px) {
+  .dashboard {
+    margin: 0 0px 0 2rem;
+  }
+}
+
+
+//모바일
+@media (max-width: 768px) {
+
+  .dashboard {
+    margin: 0 0px .5rem 0;
+    background-color: red;
+    height: 100%;
+  } 
+  .summary {
+    grid-template-columns: 1fr;
+  }
+  .credit {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .credit .item {
+    padding: 0px;
+ }
+.count {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0px;
+}
+
+.notice {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+.notice-section .nottitle {
+flex: 1;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+width: 180px;
+}
+.notice .notice-full {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+
+.graph-chart {
+ min-height: 150px !important;
+}
+
+
+}
+
 
 
 
