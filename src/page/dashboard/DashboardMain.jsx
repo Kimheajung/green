@@ -231,9 +231,9 @@ const [chartOptions, setChartOptions] = useState({});
        </div>
 
         <div className="flex flex-col md:flex-row gap-4">
-          <div  className="flex flex-1 relative items-center gap-2" style={{ background: "orange"}}>
+          <div  className="flex flex-1 relative items-center gap-2">
             {/* 왼쪽: 반원 도넛 */}
-            <div className="sales-half-donut shrink-0" style={{ background: "yellow"}}>
+            <div className="sales-half-donut shrink-0" >
               <Chart type="doughnut" data={data} options={options} />
               <div className="sales-half-donut__center">
                 <strong>{salesRate}%</strong>
@@ -241,7 +241,7 @@ const [chartOptions, setChartOptions] = useState({});
             </div>
 
             {/* 오른쪽: 매출 텍스트 */}
-            <div className="flex flex-col" style={{ background: "green"}}>
+            <div className="flex flex-col">
               <span className="tit">당년 매출액 현황</span>
               <p className="value">
                 1,450<span className="text-gray-400">억원</span>
