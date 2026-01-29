@@ -14,19 +14,18 @@ const [noCreditMode, setNoCreditMode] = useState(false);
 
 const notices = [
   { title: "전략기획팀 1월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15", isNew: true },
-  { title: "설 연휴 배송 일정 안내", date: "2026-01-10" },
-  { title: "전략기획팀 1월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15" },
-  { title: "설 연휴 배송 일정 안내", date: "2026-01-10" },
-  { title: "대리점 정책 변경 안내", date: "2026-01-05" }
+  { title: "설 연휴 배송 일정 안내", date: "2026-01-10", isNew: false },
+  { title: "전략기획팀 1월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15", isNew: false },
+  { title: "전략기획팀 2월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15", isNew: false },
+  { title: "전략기획팀 3월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15", isNew: false },
+  { title: "전략기획팀 4월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15", isNew: false },
+  { title: "전략기획팀 5월 월간현안보고 안내 및 복지 포인트 안내 및 가이드", date: "2026-01-15", isNew: false },
 ];
 
 // max5개
 const files = [
   { title: "납세_롤러_스토퍼_경향하우징_LX하우시스(26년 1월)가이드 배포", date: "2026-01-15", isNew: true },
-  { title: "여신 약정서.hwp", date: "2026-01-15" },
-  { title: "납세_롤러_스토퍼_경향하우징_LX하우시스(26년 1월)가이드 배포", date: "2026-01-15" },
-  { title: "여신 약정서.hwp", date: "2026-01-15" },
-  { title: "납세_롤러_스토퍼_경향하우징_LX하우시스(26년 1월)가이드 배포", date: "2026-01-15" }
+  { title: "여신 약정서.hwp", date: "2026-01-15", isNew: false },
 ];
 
 
@@ -79,13 +78,9 @@ const [chartOptions, setChartOptions] = useState({});
         const options = {
             maintainAspectRatio: false,
             responsive: true,
-            //aspectRatio: 0.8,
             plugins: {
                 legend: {
                   display: false
-                   // labels: {
-                   //     fontColor: textColor
-                  //  }
                 }
             },
             scales: {
@@ -142,22 +137,6 @@ const [chartOptions, setChartOptions] = useState({});
     desc: "PBF-84EWIA/AB 외 3건 주문",
     orderNo: "PB00009890"
   },
-  {
-    id: 3,
-    status: "승인대기",
-    tagClass: "main02",
-    company: "금호석유화학(주)",
-    desc: "PBF-84EWIA/AB 외 3건 주문",
-    orderNo: "PB00009890"
-  },
-  {
-    id: 4,
-    status: "승인대기",
-    tagClass: "main02",
-    company: "금호석유화학(주)",
-    desc: "PBF-84EWIA/AB 외 3건 주문",
-    orderNo: "PB00009890"
-  },
 ];
 
 
@@ -206,21 +185,21 @@ const [chartOptions, setChartOptions] = useState({});
         <Button icon="pi pi-plus" className="w-[10px]" rounded text severity="secondary" aria-label="더보기"/>
        </div>
 
-        <div className="flex flex-col md:flex-row gap-4">
-          <div  className="flex flex-1 relative items-center gap-2">
+        <div className="flex flex-col md:flex-row gap-2">
+          <div  className="flex flex-1 relative items-center doughnut-wrap">
             {/* 왼쪽: 반원 도넛 */}
-            <div className="sales-half-donut shrink-0">
+            <div className="sales-half-donut">
               <Chart type="doughnut" data={data} options={options} />
               <div className="sales-half-donut__center">
                 <strong>{salesRate}%</strong>
               </div>
             </div>
 
-            {/* 오른쪽: 매출 텍스트 */}
+             {/* 오른쪽: 매출 텍스트  / 금액이 적은경우 */}
             <div className="flex flex-col">
-              <span className="tit">당년 매출액 현황</span>
+              <span className="tit pb-2">당년 매출액 현황</span>
               <p className="value">
-                1,450<span className="text-gray-400">억원</span>
+                1,450,000<span className="text-gray-400">원</span>
               </p>
               <span className="minus">
                 지난 년도보다 -20억 <span>총 4 만건</span>
@@ -228,9 +207,9 @@ const [chartOptions, setChartOptions] = useState({});
             </div>
           </div>
 
-          <div  className="flex flex-1 items-center gap-4">
+          <div  className="flex flex-1 items-center doughnut-wrap">
             {/* 왼쪽: 반원 도넛 */}
-            <div className="sales-half-donut shrink-0">
+            <div className="sales-half-donut ">
               <Chart type="doughnut" data={data} options={options} />
               <div className="sales-half-donut__center">
                 <strong>{salesRate}%</strong>
@@ -238,7 +217,7 @@ const [chartOptions, setChartOptions] = useState({});
             </div>
 
             {/* 오른쪽: 매출 텍스트 */}
-            <div className="flex flex-col">
+            <div className="flex flex-col" >
               <span className="tit">당월 매출액 현황</span>
               <p className="value">
                 212,290<span className="text-gray-400">억원</span>
@@ -262,11 +241,11 @@ const [chartOptions, setChartOptions] = useState({});
       <div className="count pt-2">
         <div className="count-item">
           <span className="label">당일 주문</span>
-          <span><strong className="num">0</strong> 건</span>
+          <span><strong className="num1">0</strong> 건</span>
         </div>
         <div className="count-item">
-          <span className="label">승인 완료</span>
-          <span><strong className="num">10</strong> 건</span>
+          <span className="label">주문 승인</span>
+          <span><strong className="num2">10</strong> 건</span>
         </div>
         <div className="count-item">
           <span className="label">승인 대기</span>
@@ -275,16 +254,16 @@ const [chartOptions, setChartOptions] = useState({});
       </div>
       <div className="count pt-2 mt-2">
         <div className="count-item">
-          <span className="label">당일 주문</span>
+          <span className="label">주문변경요청</span>
           <span><strong className="num">1</strong> 건</span>
         </div>
         <div className="count-item">
-          <span className="label">승인 완료</span>
-          <span><strong className="num">0</strong> 건</span>
+          <span className="label">변경승인</span>
+          <span><strong className="num1">0</strong> 건</span>
         </div>
         <div className="count-item">
-          <span className="label">승인 대기</span>
-          <span><strong className="num">3</strong> 건</span>
+          <span className="label">변경승인대기</span>
+          <span><strong className="num2">3</strong> 건</span>
         </div>
       </div>
     </div>
@@ -294,7 +273,10 @@ const [chartOptions, setChartOptions] = useState({});
    <div className="main-area">
     {!noCreditMode && (
       <section className="credit">
-        <h3>여신현황</h3>
+        <div className="credit-header">
+          <h3>여신 현황</h3>
+          <Button  rounded text severity="secondary" label="더보기"/>
+        </div>
         <div className="item">
           <span>총 여신</span>
           <span className="tit"><strong>2,890</strong>억원</span>
@@ -314,16 +296,6 @@ const [chartOptions, setChartOptions] = useState({});
       </section>
   )}
       <section className="notice" >
-        
-        {/* 일정관리  
-            <Calendar value={date} onChange={(e) => setDate(e.value)} inline  /> 
-        <div className="item h-full" style={{ height: "200px"}} >
-          <div className="flex flex-col md:flex-row gap-4" >
-            <div>
-              일정달력클릭하면 내용나오는 구조
-            </div>
-          </div>
-        </div>*/}
         <div className="card2 graph-item">
           <div className="flex flex-col md:flex-row gap-4 h-full min-h-0">
     
@@ -338,18 +310,12 @@ const [chartOptions, setChartOptions] = useState({});
 
             {/* 일정 상세 */}
             <div className="flex-[7] min-h-0 flex flex-col">
-              {/* 날짜 헤더 */}
               <p className="text-xl font-bold mb-4 text-gray-500 shrink-0">
                 오늘 2026.01.27
               </p>
 
-              {/* 리스트 영역 */}
               <div
-                className={`
-                  cal-list
-                  overflow-y-auto
-                  ${CALENDAR_ITEMS.length > 5 ? "pr-1" : ""}
-                `}
+                className={`cal-list overflow-y-auto ${CALENDAR_ITEMS.length > 5 ? "pr-1" : ""} `}
               >
                 {CALENDAR_ITEMS.map((item) => (
                   <div key={item.id}
@@ -358,17 +324,7 @@ const [chartOptions, setChartOptions] = useState({});
                   >
                     <Tag
                       severity="contrast"
-                      className={`
-                        ${item.tagClass}
-                        pointer-events-none
-                        shrink-0
-                        min-w-[64px]
-                        h-[18px]
-                        flex items-center justify-center
-                        px-2
-                        text-xs
-                        whitespace-nowrap
-                      `}
+                      className={` ${item.tagClass} pointer-events-none shrink-0 min-w-[64px]  h-[18px] flex items-center justify-center px-2 text-xs whitespace-nowrap`}
                       value={item.status}
                     />
 
@@ -415,12 +371,16 @@ const [chartOptions, setChartOptions] = useState({});
                 <Button icon="pi pi-plus" className="w-1" rounded text severity="secondary" aria-label="더보기"/>
               </div>
               <ul>
-                {notices.map((item, idx) => (
-                  <li key={idx} onClick={() => navigate("/")} className="cursor-pointer hover:text-blue-800">
+                {notices.slice(0, 5).map((item, idx) => (
+                  <li
+                    key={idx}
+                    onClick={() => navigate("/")}
+                    className="cursor-pointer hover:text-blue-800"
+                  >
                     <span className="nottitle">{item.title}</span>
-                     {item.isNew && (
-                        <span className="notice-new">N</span>
-                      )}
+
+                    {item.isNew && <span className="notice-new">N</span>}
+
                     <span className="date">{item.date}</span>
                   </li>
                 ))}
@@ -436,9 +396,16 @@ const [chartOptions, setChartOptions] = useState({});
                 <Button icon="pi pi-plus" className="w-1" rounded text severity="secondary" aria-label="더보기"/>
               </div>
               <ul>
-                {files.map((item, idx) => (
-                  <li key={idx} onClick={() => navigate("/")} className="cursor-pointer hover:text-blue-800">
+                {files.slice(0, 5).map((item, idx) => (
+                  <li
+                    key={idx}
+                    onClick={() => navigate("/")}
+                    className="cursor-pointer hover:text-blue-800"
+                  >
                     <span className="nottitle">{item.title}</span>
+
+                    {item.isNew && <span className="notice-new">N</span>}
+
                     <span className="date">{item.date}</span>
                   </li>
                 ))}
