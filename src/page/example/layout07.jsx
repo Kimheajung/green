@@ -143,6 +143,7 @@ const Layout07 = () => {
 
     
     { group: "건자재PC", title: "8.재고관리 > 기초재고등록", link: "/Page20", desc: "", status: "작업완료", date: "25.12.03" },
+    { group: "건자재PC", title: "9.알바다~", link: "/Page31", desc: "", status: "작업완료", date: "25.12.03" },
   ];
 
   const getStatusClass = (status) => {

@@ -57,6 +57,7 @@ import Page17 from './page/example/page17.jsx';
 import Page18 from './page/example/page18.jsx';
 import Page19 from './page/example/page19.jsx';
 import Page20 from './page/example/page20.jsx';
+import Page31 from './page/example/page31.jsx';
 
 // 임시 Forbidden. 추후 인증 로직 추가 가능.
 function Forbidden({ component }) {
@@ -146,6 +147,18 @@ export default function AppRoute() {
             component={
               <MainLayout>
                 <Page06 />
+              </MainLayout>
+            }
+          />
+        }
+      />
+      <Route
+        path="/Page31"
+        element={
+          <Forbidden
+            component={
+              <MainLayout>
+                <Page31 />
               </MainLayout>
             }
           />

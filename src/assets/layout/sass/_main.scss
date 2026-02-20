@@ -192,6 +192,7 @@ a, button {
 }
 
 
+
 /* 여신 현황 */
 .credit {
   display: grid;
@@ -523,6 +524,12 @@ a, button {
   .credit .item {
     padding: 0px;
  }
+
+ .credit.item span{
+  font-size: 14px;
+}
+
+
 .count {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
