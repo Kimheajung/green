@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <title>Hugreen 건자재시스템</title>
@@ -8,12 +8,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        
-        <!-- 파비콘 경로 수정 -->
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        
-        <!-- %PUBLIC_URL% 제거 및 절대 경로(/) 지정 -->
-        <link id="theme-link" rel="stylesheet" href="/assets/themes/lara-light-cyan/theme.css">
+        <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
+        <link id="theme-link" rel="stylesheet" href="%PUBLIC_URL%/assets/themes/lara-light-cyan/theme.css">
     </head>
 
     <body>
@@ -26,8 +22,5 @@
                 </div>
             </div>
         </div>
-
-        <!-- 🚨 Vite 필수: React 앱 진입점 script 추가 (확장자 및 경로 확인) -->
-        <script type="module" src="/src/main.jsx"></script>
     </body>
 </html>
